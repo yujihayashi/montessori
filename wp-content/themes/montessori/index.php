@@ -39,63 +39,74 @@ get_header(); ?>
 	</ul>
 	<div class="cycle-nav"></div>
 </div> <!-- .home-banner -->
-<div class="home-chamadas">
-	<div class="page-content">
-		<div class="container">
-			<div class="row">
-				<a href="#" class="col-md-4 col-sm-4 chamada">
-					<span class="content">
-						<span class="imagem"><span class="fa fa-calendar"></span></span>
-						<span class="title">Calendário</span>
-					</span>
-				</a> <!-- .chamada -->
-				<a href="#" class="col-md-4 col-sm-4 chamada">
-					<span class="content">
-						<span class="imagem"><span class="fa fa-video-camera"></span></span>
-						<span class="title">Galeria de Vídeos</span>
-					</span>
-				</a> <!-- .chamada -->
-				<a href="#" class="col-md-4 col-sm-4 chamada">
-					<span class="content">
-						<span class="imagem"><span class="fa fa-image"></span></span>
-						<span class="title">Galeria de Fotos</span>
-					</span>
-				</a> <!-- .chamada -->
-			</div> <!-- .row -->
-		</div> <!-- .container -->
-	</div> <!-- .page-content -->
-</div> <!-- .home-chamadas -->
-<div class="home-blog">
-	<div class="container">
-		<?php
-    // Get the ID of a given category
-		$category_id = get_cat_ID( 'Blog' );
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<?php
+			$category_id = get_cat_ID( 'Noticias' );
 
-    // Get the URL of this category
-		$category_link = get_category_link( $category_id );
-		?>
-		<h2 class="page-title">Últimas do blog</h2>
-		<div class="page-content">
-			<ul class="lista-blog">
-				<?
-				global $post;
-				$args = array( 'numberposts' => 3, 'category_name' => 'blog' );
-				$posts = get_posts( $args );
-				if ($posts) {
-					foreach( $posts as $post ): setup_postdata($post); 
+			$category_link = get_category_link( $category_id );
+			?>
+			<div class="box-noticias">
+				<h2 class="box-title">Notícias</h2>
+				<div class="box-content">
+					<ul class="lista-noticias">
+						<?
+						global $post;
+						$args = array( 'numberposts' => 1, 'category_name' => 'noticias' );
+						$posts = get_posts( $args );
+						if ($posts) {
+							foreach( $posts as $post ): setup_postdata($post); 
+							?>
+							<?php get_template_part( 'inc/lista', 'noticias' ); ?>
+							<?php
+							endforeach; 
+						}
+						?>
+						<?
+						global $post;
+						$args = array( 'numberposts' => 2, 'category_name' => 'noticias', 'offset' => '1' );
+						$posts = get_posts( $args );
+						if ($posts) {
+							foreach( $posts as $post ): setup_postdata($post); 
 
-					?>
-					<?php get_template_part( 'inc/lista', 'blog' ); ?>
-					<?php
-					endforeach; 
-				} else { echo '<p class="text-center">No momento não há nenhum post publicado.</p>';}
-				?>
-			</ul>
-			<p class="text-right">
-				<a href="<?= $category_link; ?>" class="btn btn-primary" title="Veja todos os posts">Ver Mais <i class="fa fa-arrow-circle-o-right"></i></a>
-			</p>
-		</div> <!-- .page-content -->
-	</div> <!-- .container -->
-</div> <!-- .home-blog -->
+							?>
+							<?php get_template_part( 'inc/lista', 'noticias' ); ?>
+							<?php
+							endforeach; 
+						} else { echo '<li>No momento não há nenhuma notícia publicada.</li>';}
+						?>
+					</ul>
+					<p>
+						<a href="<?= $category_link; ?>" class="btn btn-info" title="Veja todos os posts">+ notícias</a>
+					</p>
+				</div> <!-- .box-content -->
+			</div> <!-- box-noticias -->
+		</div> <!-- col-md-8 -->
+		<div class="col-md-3 col-md-offset-1">
+			<div class="box-avisos">
+				<h2 class="box-title">Avisos</h2>
+				<div class="box-content">
+					<ul class="lista-avisos">
+						<li>
+							<h3>Dia internacional do livro infantil</h3>
+							<p>
+								No dia 4 de abril será a comemoração do Dia Internacional do Livro Infantil no Peteleco.
+							</p>
+						</li>
+					</ul>
+				</div> <!-- box-content -->
+			</div> <!-- box-avisos -->
+			<div class="box-tv">
+				<h2 class="box-title">TV Montessori</h2>
+				<div class="box-content">
+					<p>
+						<a href="<?= $category_link; ?>" class="btn btn-info" title="Veja todos os posts">+ vídeos</a>
+					</p>
+				</div> <!-- box-content -->
+			</div> <!-- box-tv -->
+		</div> <!-- col-md-3 -->
+	</div> <!-- row -->
+</div> <!-- container -->
 
 <?php get_footer(); ?>

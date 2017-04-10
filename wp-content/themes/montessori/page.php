@@ -12,21 +12,23 @@
  */
 
 get_header(); ?>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div> <!-- col-md-3 -->
+		<div class="col-md-9">
+			<?php
+			while ( have_posts() ) : the_post();
 
-<?php castilla_breadcrumb(); ?>
+			get_template_part( 'content', 'page' );
+
+			endwhile;
+			?>
+		</div> <!-- col-md-9 -->
+	</div> <!-- row -->
+</div> <!-- container -->
+
 <?php
-					// Start the Loop.
-while ( have_posts() ) : the_post();
 
-						// Include the page content template.
-get_template_part( 'content', 'page' );
-
-						// If comments are open or we have at least one comment, load up the comment template.
-					/*if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}*/
-					endwhile;
-					?>
-
-					<?php
-					get_footer();
+get_footer();

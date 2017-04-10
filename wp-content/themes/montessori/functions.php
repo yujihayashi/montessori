@@ -1,5 +1,6 @@
 <?
 add_theme_support( 'post-thumbnails' ); 
+    add_theme_support( 'title-tag' );
 
 //Gets post cat slug and looks for single-[cat slug].php and applies it
 add_filter('single_template', create_function(
