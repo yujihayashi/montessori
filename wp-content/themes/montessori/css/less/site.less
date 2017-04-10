@@ -42,29 +42,43 @@ small {display: inline-block;line-height: 1.1;}
 textarea {resize:vertical;}
 a, button {transition: all 0.25s ease 0s;}
 label {font-weight: normal;}
-body {font-size: 16.5px;}
 /*
 FONTS START
 **********************************************************************************************/
-.navbar, .breadcrumb {font-family: 'candararegular', Arial, sans-serif;font-weight: normal;}
-.site-direitos .left {font-family: 'alleritalic', Arial, sans-serif;font-weight: normal;}
-.chamada .title, .btn-sm, .site-direitos .right {font-family: 'allerbold', Arial, sans-serif;font-weight: normal;}
-.pagination, .home-escolher .page-content, .home-escolher .page-content h1, .home-escolher .page-content h2, .home-escolher .page-content h3 {font-family: 'aller_lightregular', Arial, sans-serif;font-weight: normal;}
-.box-depoimento {font-family: 'aller_lightitalic', Arial, sans-serif;font-weight: normal;}
+.footer-phone, .footer-header {font-family: 'ralewayextralight', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
 FONTS END
 */
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.extra-footer {
 
+    .site-footer {
+        color: #dddddd;background: #497ec1;padding-top:36px;padding-bottom: 36px;
+        a {color: #FFF;}
+    }
+    .site-direitos {background: #FFF;text-align: center;padding-top:15px;padding-bottom: 15px;font-size: 10px;}
+    .footer-menu > li {
+        ul > li {margin-bottom:10px;}
+        + li {margin-top: 20px;}
+    }
+    .footer-phone {font-size: 26px;}
+    .footer-header {text-transform: uppercase;font-size: 16px;display: block;margin-bottom: 15px;}
+    .footer-social {
+        font-size: 22px;
+        > li {
+            float: left;margin-right: 10px;
+        }
+    }
+}
 /**********************************************************************************************
 ESTRUTURA END 
 */
 /*
 CLASSES START
 **********************************************************************************************/
-[class^='lista-'], [class^='lista-'], [class^='menu-'], [class^='menu-'] ul, .cycle-slideshow {list-style:none;margin-bottom:0;padding-left:0;}
+[class^='lista-'], [class^='lista-'], [class^='menu-'], [class^='menu-'] ul, .cycle-slideshow, .footer-menu, .footer-menu ul {list-style:none;margin-bottom:0;padding-left:0;}
 form {   
     .ajax-loader {float: left;}
 }
@@ -77,6 +91,15 @@ form {
     img {width: 100%;height: auto;}
 }
 
+.color-bar {
+    [class^='bar-'], [class*='bar-'] {width: 16.66666666666667%;display: block;float: left;height:8px;}
+    .bar-1 {background: #0257a7;}
+    .bar-2 {background: #0d7ec4;}
+    .bar-3 {background: #05adec;}
+    .bar-4 {background: #fdc705;}
+    .bar-5 {background: #f68634;}
+    .bar-6 {background: #e94140;}
+}
 .cycle-nav {
     span {display: inline-block;cursor: pointer;}
 }
@@ -158,7 +181,7 @@ JQUERY UI END
 
 }
 @media (max-width: 354px) {
-    
+
 }
 @media (min-width: 768px) and (max-width: 980px) {
 

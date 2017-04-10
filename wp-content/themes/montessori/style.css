@@ -43,37 +43,12 @@ button {
 label {
   font-weight: normal;
 }
-body {
-  font-size: 16.5px;
-}
 /*
 FONTS START
 **********************************************************************************************/
-.navbar,
-.breadcrumb {
-  font-family: 'candararegular', Arial, sans-serif;
-  font-weight: normal;
-}
-.site-direitos .left {
-  font-family: 'alleritalic', Arial, sans-serif;
-  font-weight: normal;
-}
-.chamada .title,
-.btn-sm,
-.site-direitos .right {
-  font-family: 'allerbold', Arial, sans-serif;
-  font-weight: normal;
-}
-.pagination,
-.home-escolher .page-content,
-.home-escolher .page-content h1,
-.home-escolher .page-content h2,
-.home-escolher .page-content h3 {
-  font-family: 'aller_lightregular', Arial, sans-serif;
-  font-weight: normal;
-}
-.box-depoimento {
-  font-family: 'aller_lightitalic', Arial, sans-serif;
+.footer-phone,
+.footer-header {
+  font-family: 'ralewayextralight', Arial, sans-serif;
   font-weight: normal;
 }
 /**********************************************************************************************
@@ -82,6 +57,44 @@ FONTS END
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.extra-footer .site-footer {
+  color: #dddddd;
+  background: #497ec1;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.extra-footer .site-footer a {
+  color: #FFF;
+}
+.extra-footer .site-direitos {
+  background: #FFF;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 10px;
+}
+.extra-footer .footer-menu > li ul > li {
+  margin-bottom: 10px;
+}
+.extra-footer .footer-menu > li + li {
+  margin-top: 20px;
+}
+.extra-footer .footer-phone {
+  font-size: 26px;
+}
+.extra-footer .footer-header {
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 15px;
+}
+.extra-footer .footer-social {
+  font-size: 22px;
+}
+.extra-footer .footer-social > li {
+  float: left;
+  margin-right: 10px;
+}
 /**********************************************************************************************
 ESTRUTURA END 
 */
@@ -92,7 +105,9 @@ CLASSES START
 [class^='lista-'],
 [class^='menu-'],
 [class^='menu-'] ul,
-.cycle-slideshow {
+.cycle-slideshow,
+.footer-menu,
+.footer-menu ul {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
@@ -122,6 +137,31 @@ form .ajax-loader {
 .box-imagem-full img {
   width: 100%;
   height: auto;
+}
+.color-bar [class^='bar-'],
+.color-bar [class*='bar-'] {
+  width: 16.66666666666667%;
+  display: block;
+  float: left;
+  height: 8px;
+}
+.color-bar .bar-1 {
+  background: #0257a7;
+}
+.color-bar .bar-2 {
+  background: #0d7ec4;
+}
+.color-bar .bar-3 {
+  background: #05adec;
+}
+.color-bar .bar-4 {
+  background: #fdc705;
+}
+.color-bar .bar-5 {
+  background: #f68634;
+}
+.color-bar .bar-6 {
+  background: #e94140;
 }
 .cycle-nav span {
   display: inline-block;

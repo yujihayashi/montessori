@@ -38,6 +38,14 @@ get_header(); ?>
 		</li> */ ?>
 	</ul>
 	<div class="cycle-nav"></div>
+	<div class="color-bar clearfix">
+		<span class="bar-1"></span>
+		<span class="bar-2"></span>
+		<span class="bar-3"></span>
+		<span class="bar-4"></span>
+		<span class="bar-5"></span>
+		<span class="bar-6"></span>
+	</div> <!-- color-bar -->
 </div> <!-- .home-banner -->
 <div class="container">
 	<div class="row">

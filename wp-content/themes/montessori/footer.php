@@ -5,10 +5,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-sm-12 text-center">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori-white.png" alt="Logo Mundo Montessori" class="logo-footer">
+					<p>
+						<img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori-white.png" alt="Logo Mundo Montessori" class="logo-footer">
+					</p>
+					<p>
+						A Educação Cósmica permite a formação do cidadão universal apto a relacionar-se com as exigências do mundo moderno de forma harmônica, criativa e ética.
+					</p>
+					<p>
+						Agenda Kids
+					</p>
+					<p>
+						<a href="#">AppStore</a>
+						<a href="#">Google Play</a>
+					</p>
 				</div> <!-- .col-md-3 -->
 				<div class="col-md-2 col-sm-3">
-					<ul class="menu-footer">
+					<ul class="footer-menu">
 						<li>
 							<a href="#" class="footer-header">Institucional</a>
 							<ul>
@@ -24,7 +36,7 @@
 					</ul>
 				</div> <!-- .col-md-2 -->
 				<div class="col-md-2 col-sm-3">
-					<ul class="menu-footer">
+					<ul class="footer-menu">
 						<li>
 							<a href="#" class="footer-header">Peteleco</a>
 							<ul>
@@ -61,7 +73,7 @@
 							</ul>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-2 col-sm-3">
-							<ul class="menu-footer">
+							<ul class="footer-menu">
 								<li>
 									<a href="javascript:void(0);" class="footer-header">CEMP</a>
 									<ul>
@@ -73,7 +85,7 @@
 							</ul>
 						</div> <!-- .col-md-2 -->
 						<div class="col-md-3 col-sm-3">
-							<ul class="menu-footer">
+							<ul class="footer-menu">
 								<li>
 									<a href="javascript:void(0);" class="footer-header">Contatos</a>
 									<ul class="media-list">
@@ -96,8 +108,10 @@
 											</div> <!-- media-body -->
 										</li>
 									</ul>
+								</li>
+								<li>
 									<a href="javascript:void(0);" class="footer-header">Siga-nos</a>
-									<ul class="footer-social">
+									<ul class="footer-social clearfix">
 										<li><a href="#" title="Acesse nosso Twitter"><i class="fa fa-twitter"></i></a></li>
 										<li><a href="#" title="Acesse nosso Facebook"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#" title="Acesse nosso Instagram"><i class="fa fa-instagram"></i></a></li>
@@ -115,10 +129,10 @@
 			<div class="site-direitos">
 				<div class="container">
 					<p>
-						Mundo Montessori. Todos os direitos reservados.
+						© 2017 Mundo Montessori, Todos os direitos reservados.
 					</p>
 					<p>
-						Desenvolvido por <a href="http://grutacriativa.com.br/" title="Conheça a Gruta Criativa" target="_blank">Gruta Criativa</a>
+						Desenvolvido por <a href="http://grutacriativa.com.br/" title="Conheça a Gruta Criativa" target="_blank">Gruta Criativa Comunicação</a>
 					</p>
 				</div> <!-- .container -->
 			</div> <!-- .site-direitos -->
