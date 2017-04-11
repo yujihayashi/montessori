@@ -1,6 +1,6 @@
-@primary-color: #a70c11; 
-@secondary-color: #ed1e24; 
-@third-color: #fff700;  // amarelo
+@primary-color: #05529f;  // azul
+@secondary-color: #05adec;  // ciano
+@third-color: #f68634;  // laranja
 /*
 Theme Name: Mundo Montessori
 Author: Gruta Criativa
@@ -45,31 +45,69 @@ label {font-weight: normal;}
 /*
 FONTS START
 **********************************************************************************************/
-.footer-phone, .footer-header {font-family: 'ralewayextralight', Arial, sans-serif;font-weight: normal;}
+.footer-phone, .footer-header, .box-title {font-family: 'ralewayextralight', Arial, sans-serif;font-weight: normal;}
+.navbar-principal .active, .box-tv .box-title {font-family: 'ralewayextrabold', Arial, sans-serif;font-weight: normal;}
+.destaque .date .day {font-family: 'ralewaybold', Arial, sans-serif;font-weight: normal;}
+.lista-noticias .title {font-family: 'ralewaymedium', Arial, sans-serif;font-weight: normal;}
 /**********************************************************************************************
 FONTS END
 */
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.site-geral {position: relative;}
+.extra-header {
+    position: absolute;left: 0;top: 0;right: 0;z-index: 2;
+    .navbar-principal {
+        font-size: 14px;
+    }
+    .line-1 {
+        padding-top:15px;
+        .navbar-nav {
+            > li {
+                > a {padding:5px 10px;}
+            }
+        }
+        .navbar-social {
+            font-size: 22px;
+            > li {
+                > a {padding: 2px 5px;color: #05adec;}
+            }
+        }
+        .navbar-sublinks {
+            > li {margin-right: 10px;}
+        }
+    }
+    li.btn-matricula-online {
+        > a {
+            color: @third-color;border:1px solid @third-color;padding:5px 10px;-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radius: 4px;-o-border-radius: 4px;border-radius: 4px;
+            &:hover, &:active, &:focus {color: darken(@third-color, 15%);}
+        }
+    }
+}
+.extra-central {position: relative;z-index: 1;}
 .extra-footer {
 
     .site-footer {
-        color: #dddddd;background: #497ec1;padding-top:36px;padding-bottom: 36px;
+        color: #dddddd;background: #117ec4;padding-top:36px;padding-bottom: 36px;
         a {color: #FFF;}
     }
-    .site-direitos {background: #FFF;text-align: center;padding-top:15px;padding-bottom: 15px;font-size: 10px;}
+    .site-direitos {background: #FFF;text-align: center;padding-top:15px;padding-bottom: 15px;font-size: 11px;}
     .footer-menu > li {
-        ul > li {margin-bottom:10px;}
+        ul > li {margin-bottom:5px;}
         + li {margin-top: 20px;}
     }
     .footer-phone {font-size: 26px;}
-    .footer-header {text-transform: uppercase;font-size: 16px;display: block;margin-bottom: 15px;}
+    .footer-header {text-transform: uppercase;font-size: 16px;display: block;margin-bottom: 10px;}
     .footer-social {
         font-size: 22px;
         > li {
             float: left;margin-right: 10px;
         }
+    }
+    .footer-frase {font-size: 11px;}
+    .footer-contatos {
+        .fa {font-size: 14px;}
     }
 }
 /**********************************************************************************************
@@ -90,6 +128,34 @@ form {
     background: no-repeat center;background-size: cover;position: relative;
     img {width: 100%;height: auto;}
 }
+.box-title {text-transform: uppercase;}
+.box-noticias, .box-tv {
+    .title {margin:0;}
+    .title a, .box-title a {color: @secondary-color;}
+}
+.box-noticias {
+    .imagem {width: 100%;padding-top:58%;background:no-repeat center;background-size:cover;display: block;}
+    .date {font-size: 11px;color: #868686;}
+    .title {margin:5px 0;}
+    .destaque {
+        margin-bottom: 30px;
+        .date {
+            background: @secondary-color;display: inline-block;color: #FFF;text-align: center;line-height: 1;padding:6px 10px 10px;position: relative;
+            .day {font-size: 22px;}
+            .month {font-size: 11px;text-transform: uppercase;}
+            .fa {position: absolute;top:50%;margin-top:-5px;right:-4px;color: @secondary-color;}
+        }
+            .resumo {margin-top:15px;}
+    }
+}
+.box-tv {
+    .box-title {margin-bottom: -5px;line-height: 1;}
+    .embed-responsive {margin-bottom: 15px;}
+}
+.box-avisos {
+    .title, .box-title {color: @third-color;}
+    .title {font-size: 18px;margin-top:0;margin-bottom: 5px;}
+}
 
 .color-bar {
     [class^='bar-'], [class*='bar-'] {width: 16.66666666666667%;display: block;float: left;height:8px;}
@@ -97,7 +163,7 @@ form {
     .bar-2 {background: #0d7ec4;}
     .bar-3 {background: #05adec;}
     .bar-4 {background: #fdc705;}
-    .bar-5 {background: #f68634;}
+    .bar-5 {background: @third-color;}
     .bar-6 {background: #e94140;}
 }
 .cycle-nav {
@@ -118,7 +184,7 @@ form {
 
 .home-banner {
     position: relative;
-    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {/*height:  612px */;height:auto;width: 100%;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height:  480px;width: 100%;}
     .cycle-slideshow {
         position: relative;z-index: 1;
         li {
@@ -142,6 +208,10 @@ form {
             &.cycle-pager-active {background: #FFF;}
         }
     }
+    .mask {position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: url(img/bg-white.png) repeat-x top;}
+}
+.home-blocos {
+    padding-top:30px;padding-bottom: 30px;background: url(img/bg-home.jpg) repeat center;
 }
 
 .inline-block {display:inline-block;}
@@ -173,6 +243,12 @@ JQUERY UI END
 }
 @media (max-width: 981px) {
 
+}
+@media (min-width: 768px) {
+    .navbar-collapse {padding-left: 0;padding-right: 0;}
+    .line-1 {
+        .navbar-right {margin-right: 0;}
+    }
 }
 @media (max-width: 767px) {
 

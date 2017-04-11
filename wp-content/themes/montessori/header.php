@@ -38,33 +38,29 @@
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
-										</button>											
-										<div class="collapse navbar-collapse ">
-											<ul class="nav navbar-nav navbar-right navbar-social">
-												<li><a href="#" title="Acesse nosso"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#" title="Acesse nosso"><i class="fa fa-instagram"></i></a></li>
-												<li><a href="#" title="Acesse nosso"><i class="fa fa-youtube"></i></a></li>
-											</ul>
-											<ul class="nav navbar-nav navbar-right navbar-sublinks">
-												<li><a href="#">Matrícula online</a></li>
-												<li><a href="#">Agenda Kids</a></li>
-											</ul>
-										</div><!-- /.navbar-collapse -->
+										</button>								
+										<ul class="nav navbar-nav navbar-right navbar-social">
+											<li><a href="#" title="Acesse nosso"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#" title="Acesse nosso"><i class="fa fa-instagram"></i></a></li>
+											<li><a href="#" title="Acesse nosso"><i class="fa fa-youtube"></i></a></li>
+										</ul>
+										<ul class="nav navbar-nav navbar-right navbar-sublinks">
+											<li class="btn-matricula-online"><a href="#"><i class="fa fa-user"></i> Matrícula online</a></li>
+											<li><a href="#" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
+										</ul>
 									</div> <!-- .line-1 -->
 									<div class="line-2">
 										<div class="collapse navbar-collapse navbar-primary">
-											<div class="right-1 clearfix">
-												<ul class="nav navbar-nav navbar-right">
-													<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
+												<ul class="nav navbar-nav navbar-right navbar-principal">
+													<li class="active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
 													<li><a href="http://localhost/montessori/pagina-exemplo/">O mundo Montessori</a></li>
 													<li><a href="#">Peteleco</a></li>
-													<li><a href="#">SEMP</a></li>
+													<li><a href="#">CEMP</a></li>
 													<li><a href="#">Calendário</a></li>
 													<li><a href="#">Galeria</a></li>
 													<li><a href="#">Notícias</a></li>
 													<li><a href="#">Contato</a></li>
 												</ul>
-											</div> <!-- .right-1 -->
 										</div><!-- /.navbar-collapse -->
 									</div> <!-- .line-2 -->
 								</div> <!-- col-md-10 -->

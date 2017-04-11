@@ -22,11 +22,11 @@ FUNÇÕES PADRÕES START
 FUNÇÕES PADRÕES END
 */
 ::selection {
-  background-color: #a70c11;
+  background-color: #05529f;
   color: #FFF;
 }
 ::-moz-selection {
-  background-color: #a70c11;
+  background-color: #05529f;
   color: #FFF;
 }
 small {
@@ -47,8 +47,22 @@ label {
 FONTS START
 **********************************************************************************************/
 .footer-phone,
-.footer-header {
+.footer-header,
+.box-title {
   font-family: 'ralewayextralight', Arial, sans-serif;
+  font-weight: normal;
+}
+.navbar-principal .active,
+.box-tv .box-title {
+  font-family: 'ralewayextrabold', Arial, sans-serif;
+  font-weight: normal;
+}
+.destaque .date .day {
+  font-family: 'ralewaybold', Arial, sans-serif;
+  font-weight: normal;
+}
+.lista-noticias .title {
+  font-family: 'ralewaymedium', Arial, sans-serif;
   font-weight: normal;
 }
 /**********************************************************************************************
@@ -57,9 +71,57 @@ FONTS END
 /*
 ESTRUTURA START
 **********************************************************************************************/
+.site-geral {
+  position: relative;
+}
+.extra-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.extra-header .navbar-principal {
+  font-size: 14px;
+}
+.extra-header .line-1 {
+  padding-top: 15px;
+}
+.extra-header .line-1 .navbar-nav > li > a {
+  padding: 5px 10px;
+}
+.extra-header .line-1 .navbar-social {
+  font-size: 22px;
+}
+.extra-header .line-1 .navbar-social > li > a {
+  padding: 2px 5px;
+  color: #05adec;
+}
+.extra-header .line-1 .navbar-sublinks > li {
+  margin-right: 10px;
+}
+.extra-header li.btn-matricula-online > a {
+  color: #f68634;
+  border: 1px solid #f68634;
+  padding: 5px 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.extra-header li.btn-matricula-online > a:hover,
+.extra-header li.btn-matricula-online > a:active,
+.extra-header li.btn-matricula-online > a:focus {
+  color: #d45f09;
+}
+.extra-central {
+  position: relative;
+  z-index: 1;
+}
 .extra-footer .site-footer {
   color: #dddddd;
-  background: #497ec1;
+  background: #117ec4;
   padding-top: 36px;
   padding-bottom: 36px;
 }
@@ -71,10 +133,10 @@ ESTRUTURA START
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .extra-footer .footer-menu > li ul > li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .extra-footer .footer-menu > li + li {
   margin-top: 20px;
@@ -86,7 +148,7 @@ ESTRUTURA START
   text-transform: uppercase;
   font-size: 16px;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .extra-footer .footer-social {
   font-size: 22px;
@@ -94,6 +156,12 @@ ESTRUTURA START
 .extra-footer .footer-social > li {
   float: left;
   margin-right: 10px;
+}
+.extra-footer .footer-frase {
+  font-size: 11px;
+}
+.extra-footer .footer-contatos .fa {
+  font-size: 14px;
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -137,6 +205,78 @@ form .ajax-loader {
 .box-imagem-full img {
   width: 100%;
   height: auto;
+}
+.box-title {
+  text-transform: uppercase;
+}
+.box-noticias .title,
+.box-tv .title {
+  margin: 0;
+}
+.box-noticias .title a,
+.box-tv .title a,
+.box-noticias .box-title a,
+.box-tv .box-title a {
+  color: #05adec;
+}
+.box-noticias .imagem {
+  width: 100%;
+  padding-top: 58%;
+  background: no-repeat center;
+  background-size: cover;
+  display: block;
+}
+.box-noticias .date {
+  font-size: 11px;
+  color: #868686;
+}
+.box-noticias .title {
+  margin: 5px 0;
+}
+.box-noticias .destaque {
+  margin-bottom: 30px;
+}
+.box-noticias .destaque .date {
+  background: #05adec;
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 10px 10px;
+  position: relative;
+}
+.box-noticias .destaque .date .day {
+  font-size: 22px;
+}
+.box-noticias .destaque .date .month {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.box-noticias .destaque .date .fa {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: -4px;
+  color: #05adec;
+}
+.box-noticias .destaque .resumo {
+  margin-top: 15px;
+}
+.box-tv .box-title {
+  margin-bottom: -5px;
+  line-height: 1;
+}
+.box-tv .embed-responsive {
+  margin-bottom: 15px;
+}
+.box-avisos .title,
+.box-avisos .box-title {
+  color: #f68634;
+}
+.box-avisos .title {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 .color-bar [class^='bar-'],
 .color-bar [class*='bar-'] {
@@ -202,8 +342,7 @@ form .ajax-loader {
 .home-banner .cycle-slideshow,
 .home-banner .cycle-slideshow li,
 .home-banner .cycle-slideshow .content {
-  /*height:  612px */
-  height: auto;
+  height: 480px;
   width: 100%;
 }
 .home-banner .cycle-slideshow {
@@ -226,7 +365,7 @@ form .ajax-loader {
   z-index: 2;
   top: 50%;
   font-size: 72px;
-  color: #fff700;
+  color: #f68634;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 .home-banner .cycle-prev:hover,
@@ -254,11 +393,24 @@ form .ajax-loader {
   display: inline-block;
   width: 82px;
   height: 8px;
-  background: #fff700;
+  background: #f68634;
   margin: 0 5px;
 }
 .home-banner .cycle-nav span.cycle-pager-active {
   background: #FFF;
+}
+.home-banner .mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(img/bg-white.png) repeat-x top;
+}
+.home-blocos {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: url(img/bg-home.jpg) repeat center;
 }
 .inline-block {
   display: inline-block;
@@ -303,3 +455,12 @@ JQUERY UI START
 /**********************************************************************************************
 JQUERY UI END
 */
+@media (min-width: 768px) {
+  .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .line-1 .navbar-right {
+    margin-right: 0;
+  }
+}

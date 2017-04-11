@@ -8,15 +8,16 @@
 					<p>
 						<img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori-white.png" alt="Logo Mundo Montessori" class="logo-footer">
 					</p>
-					<p>
+					<p class="footer-frase">
 						A Educação Cósmica permite a formação do cidadão universal apto a relacionar-se com as exigências do mundo moderno de forma harmônica, criativa e ética.
 					</p>
+					<br>
 					<p>
-						Agenda Kids
+						<a href="#" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids-white.png" alt="Agenda Kids"></a>
 					</p>
 					<p>
-						<a href="#">AppStore</a>
-						<a href="#">Google Play</a>
+						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/app-store.png" alt="Disponível na App Store"></a>
+						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/google-play.png" alt="Disponível no Google Play"></a>
 					</p>
 				</div> <!-- .col-md-3 -->
 				<div class="col-md-2 col-sm-3">
@@ -88,21 +89,21 @@
 							<ul class="footer-menu">
 								<li>
 									<a href="javascript:void(0);" class="footer-header">Contatos</a>
-									<ul class="media-list">
+									<ul class="media-list footer-contatos">
 										<li class="media">
-											<span class="pull-left"><i class="fa fa-phone"></i></span>
+											<span class="media-left media-middle"><i class="fa fa-phone"></i></span>
 											<div class="media-body">
 												<span class="footer-phone">(91) 3344-0940</span>
 											</div> <!-- media-body -->
 										</li>
 										<li class="media">
-											<span class="pull-left"><i class="fa fa-envelope"></i></span>
+											<span class="media-left media-middle"><i class="fa fa-envelope"></i></span>
 											<div class="media-body">
 												<a href="mailto:peteleco@peteleco.com.br" class="footer-mail">peteleco@peteleco.com.br</a>
 											</div> <!-- media-body -->
 										</li>
 										<li class="media">
-											<span class="pull-left"><i class="fa fa-map-marker"></i></span>
+											<span class="media-left media-middle"><i class="fa fa-map-marker"></i></span>
 											<div class="media-body">
 												<span class="footer-address">Trav. Rui Barbosa, 845 - Reduto - Belém - Pará </span>
 											</div> <!-- media-body -->
