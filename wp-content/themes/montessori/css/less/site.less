@@ -153,8 +153,12 @@ form {
     .embed-responsive {margin-bottom: 15px;}
 }
 .box-avisos {
-    .title, .box-title {color: @third-color;}
+    .title, .box-title, .cycle-nav a {color: @third-color;}
     .title {font-size: 18px;margin-top:0;margin-bottom: 5px;}
+    .cycle-nav a {
+        font-size: 12px;
+        &.cycle-pager-active {color: #f4cdb1;}
+    }
 }
 
 .color-bar {
@@ -166,8 +170,14 @@ form {
     .bar-5 {background: @third-color;}
     .bar-6 {background: #e94140;}
 }
+.cycle-slideshow {
+    &, li {width: 100%;}
+}
 .cycle-nav {
-    span {display: inline-block;cursor: pointer;}
+    span, a {
+        display: inline-block;cursor: pointer;
+        + span, + a {margin-left: 10px;}
+    }
 }
 
 .entry-content {padding:30px 0;}
@@ -203,9 +213,9 @@ form {
     .cycle-next {right: 40px;}
     .cycle-nav {
         position: absolute;left: 0;right: 0;bottom: 0;text-align: center;z-index: 3;padding:22px 0;
-        span {
-            text-indent: -1000px;overflow: hidden;display: inline-block;width: 82px;height: 8px;background: @third-color;margin:0 5px;
-            &.cycle-pager-active {background: #FFF;}
+        a {
+            display: inline-block;font-size:18px;color: @primary-color;margin:0 5px;text-shadow:5px 5px 5px rgba(0, 0, 0, .35);
+            &.cycle-pager-active {color: #FFF;}
         }
     }
     .mask {position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: url(img/bg-white.png) repeat-x top;}

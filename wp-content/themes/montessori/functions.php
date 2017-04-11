@@ -27,7 +27,7 @@ if(function_exists('bcn_display')) {
 	}
 }
 
-function castilla_paginacao( $query=null ) {
+function projeto_paginacao( $query=null ) {
 
 	global $wp_query;
 	$query = $query ? $query : $wp_query;

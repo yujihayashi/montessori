@@ -16,7 +16,7 @@
 
 get_header(); ?>
 <div class="home-banner">
-	<ul class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".home-banner .cycle-nav" data-cycle-easing="easeInOutExpo" data-cycle-log="false" data-cycle-swipe="true">
+	<ul class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".home-banner .cycle-nav" data-cycle-easing="easeInOutExpo" data-cycle-log="false" data-cycle-swipe="true" data-cycle-pager-template="<a href='javascript:void(0);'> <i class='fa fa-circle'></i> <span class='sr-only'>{{slideNum}}</span> </a>">
 		<?php $args = array(
 			'orderby'          => 'rating',
 			'category_name'    => 'banner',
@@ -138,7 +138,13 @@ get_header(); ?>
 				<div class="box-avisos">
 					<h2 class="box-title">Avisos</h2>
 					<div class="box-content">
-						<ul class="cycle-slideshow lista-avisos" data-cycle-fx="scrollHorz" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".box-avisos .cycle-nav" data-cycle-easing="easeInOutExpo" data-cycle-log="false" data-cycle-swipe="true">
+						<ul class="cycle-slideshow lista-avisos" data-cycle-fx="scrollHorz" data-cycle-timeout="5000" data-cycle-speed="1800" data-cycle-slides="> li" data-cycle-pager=".box-avisos .cycle-nav" data-cycle-easing="easeInOutExpo" data-cycle-log="false" data-cycle-swipe="true" data-cycle-pager-template="<a href='javascript:void(0);'> <i class='fa fa-circle'></i> <span class='sr-only'>{{slideNum}}</span> </a>">
+							<li>
+								<h3 class="title">Dia internacional do livro infantil</h3>
+								<p>
+									No dia 4 de abril será a comemoração do Dia Internacional do Livro Infantil no Peteleco.
+								</p>
+							</li>
 							<li>
 								<h3 class="title">Dia internacional do livro infantil</h3>
 								<p>

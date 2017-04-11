@@ -28,7 +28,7 @@ if ( have_posts() ) : ?>
 
 	?>
 </ul>
-<?php //castilla_paginacao(); ?>
+<?php //projeto_paginacao(); ?>
 <?php
 wp_reset_postdata();
 else :

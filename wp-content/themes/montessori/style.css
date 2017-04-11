@@ -270,13 +270,20 @@ form .ajax-loader {
   margin-bottom: 15px;
 }
 .box-avisos .title,
-.box-avisos .box-title {
+.box-avisos .box-title,
+.box-avisos .cycle-nav a {
   color: #f68634;
 }
 .box-avisos .title {
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 5px;
+}
+.box-avisos .cycle-nav a {
+  font-size: 12px;
+}
+.box-avisos .cycle-nav a.cycle-pager-active {
+  color: #f4cdb1;
 }
 .color-bar [class^='bar-'],
 .color-bar [class*='bar-'] {
@@ -303,9 +310,20 @@ form .ajax-loader {
 .color-bar .bar-6 {
   background: #e94140;
 }
-.cycle-nav span {
+.cycle-slideshow,
+.cycle-slideshow li {
+  width: 100%;
+}
+.cycle-nav span,
+.cycle-nav a {
   display: inline-block;
   cursor: pointer;
+}
+.cycle-nav span + span,
+.cycle-nav a + span,
+.cycle-nav span + a,
+.cycle-nav a + a {
+  margin-left: 10px;
 }
 .entry-content {
   padding: 30px 0;
@@ -387,17 +405,15 @@ form .ajax-loader {
   z-index: 3;
   padding: 22px 0;
 }
-.home-banner .cycle-nav span {
-  text-indent: -1000px;
-  overflow: hidden;
+.home-banner .cycle-nav a {
   display: inline-block;
-  width: 82px;
-  height: 8px;
-  background: #f68634;
+  font-size: 18px;
+  color: #05529f;
   margin: 0 5px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
 }
-.home-banner .cycle-nav span.cycle-pager-active {
-  background: #FFF;
+.home-banner .cycle-nav a.cycle-pager-active {
+  color: #FFF;
 }
 .home-banner .mask {
   position: absolute;
