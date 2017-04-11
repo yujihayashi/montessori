@@ -12,7 +12,7 @@ add_filter('single_template', create_function(
 );
 
 if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { 
-	function social_share_castilla( ) {
+	function social_share_projeto( ) {
 		echo "<div class='post-share'><span class='trace-start'></span><div class='share-content'>";
 		ADDTOANY_SHARE_SAVE_KIT( array( 'linkname' => get_the_title(), 'linkurl' => get_the_permalink() ) );
 		echo "</div><!-- .share-content --><span class='trace-end'></span></div> <!-- .post-share -->";
@@ -20,7 +20,7 @@ if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) {
 }
 
 if(function_exists('bcn_display')) {
-	function castilla_breadcrumb () {
+	function projeto_breadcrumb () {
 		echo '<div class="site-breadcrumb"><div class="container"><ul class="breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#">';
 		bcn_display();
 		echo '</ul></div> <!-- .container --></div> <!-- .site-breadcrumb -->';
@@ -125,6 +125,6 @@ function my_post_gallery($output, $attr) {
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 19;
+    return 25;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

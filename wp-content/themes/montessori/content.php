@@ -62,7 +62,7 @@
 		</div><!-- .entry-content -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php social_share_castilla( ); ?>
+		<?php //social_share_projeto( ); ?>
 		<?php if (get_post_meta($post->ID, 'youtube_id', true)) { ?>
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'youtube_id', true); ?>" width="588" height="331" class="embed-responsive-item" frameborder="0" allowfullscreen></iframe>

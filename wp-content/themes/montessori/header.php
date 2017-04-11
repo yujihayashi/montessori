@@ -51,16 +51,16 @@
 									</div> <!-- .line-1 -->
 									<div class="line-2">
 										<div class="collapse navbar-collapse navbar-primary">
-												<ul class="nav navbar-nav navbar-right navbar-principal">
-													<li class="active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
-													<li><a href="http://localhost/montessori/pagina-exemplo/">O mundo Montessori</a></li>
-													<li><a href="#">Peteleco</a></li>
-													<li><a href="#">CEMP</a></li>
-													<li><a href="#">Calendário</a></li>
-													<li><a href="#">Galeria</a></li>
-													<li><a href="#">Notícias</a></li>
-													<li><a href="#">Contato</a></li>
-												</ul>
+											<ul class="nav navbar-nav navbar-right navbar-principal">
+												<li class="active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
+												<li><a href="<?php echo site_url('/o-mundo-montessori/'); ?>">O mundo Montessori</a></li>
+												<li><a href="<?php echo site_url('/peteleco/'); ?>">Peteleco</a></li>
+												<li><a href="<?php echo site_url('/cemp/'); ?>">CEMP</a></li>
+												<li><a href="<?php echo site_url('/calendario/'); ?>">Calendário</a></li>
+												<li><a href="<?php echo site_url('/category/galeria/'); ?>">Galeria</a></li>
+												<li><a href="<?php echo site_url('/category/noticias/'); ?>">Notícias</a></li>
+												<li><a href="<?php echo site_url('/contato/'); ?>">Contato</a></li>
+											</ul>
 										</div><!-- /.navbar-collapse -->
 									</div> <!-- .line-2 -->
 								</div> <!-- col-md-10 -->
@@ -71,3 +71,8 @@
 			</header> <!-- .extra-header -->
 			<div class="extra-central">
 				<div class="site-central">
+					<?php if (!is_home()) { ?>
+					<div class="bg-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/bg-interna.jpg);">
+						
+					</div> <!-- bg-header -->
+					<?php } //if (!is_home()) { ?>

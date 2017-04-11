@@ -115,9 +115,39 @@ ESTRUTURA START
 .extra-header li.btn-matricula-online > a:focus {
   color: #d45f09;
 }
+.bg-header {
+  background: url(img/bg-interna.jpg) #eeeeee no-repeat center;
+  background-size: cover;
+  height: 224px;
+}
 .extra-central {
   position: relative;
   z-index: 1;
+}
+#sidebar {
+  padding-top: 50px;
+}
+#sidebar ul {
+  padding-left: 0;
+  list-style: none;
+}
+#sidebar > ul > li h2 {
+  font-size: 20px;
+}
+#sidebar > ul > li h2:after {
+  content: " ";
+  background: #959595;
+  height: 2px;
+  width: 40px;
+  display: block;
+  margin-top: 14px;
+}
+#sidebar > ul > li > ul > li > a {
+  display: inline-block;
+  padding: 3px 0;
+}
+.extra-footer {
+  margin-top: 50px;
 }
 .extra-footer .site-footer {
   color: #dddddd;
@@ -162,6 +192,9 @@ ESTRUTURA START
 }
 .extra-footer .footer-contatos .fa {
   font-size: 14px;
+}
+body.home .extra-footer {
+  margin-top: 0;
 }
 /**********************************************************************************************
 ESTRUTURA END 
@@ -218,49 +251,6 @@ form .ajax-loader {
 .box-noticias .box-title a,
 .box-tv .box-title a {
   color: #05adec;
-}
-.box-noticias .imagem {
-  width: 100%;
-  padding-top: 58%;
-  background: no-repeat center;
-  background-size: cover;
-  display: block;
-}
-.box-noticias .date {
-  font-size: 11px;
-  color: #868686;
-}
-.box-noticias .title {
-  margin: 5px 0;
-}
-.box-noticias .destaque {
-  margin-bottom: 30px;
-}
-.box-noticias .destaque .date {
-  background: #05adec;
-  display: inline-block;
-  color: #FFF;
-  text-align: center;
-  line-height: 1;
-  padding: 6px 10px 10px;
-  position: relative;
-}
-.box-noticias .destaque .date .day {
-  font-size: 22px;
-}
-.box-noticias .destaque .date .month {
-  font-size: 11px;
-  text-transform: uppercase;
-}
-.box-noticias .destaque .date .fa {
-  position: absolute;
-  top: 50%;
-  margin-top: -5px;
-  right: -4px;
-  color: #05adec;
-}
-.box-noticias .destaque .resumo {
-  margin-top: 15px;
 }
 .box-tv .box-title {
   margin-bottom: -5px;
@@ -345,6 +335,9 @@ form .ajax-loader {
 .galeria-detalhe ul {
   padding: 0;
   list-style: none;
+}
+.galeria-detalhe ul > li {
+  margin-bottom: 20px;
 }
 .galeria-detalhe .imagem {
   display: block;
@@ -431,6 +424,73 @@ form .ajax-loader {
 .inline-block {
   display: inline-block;
 }
+body.home .lista-noticias .imagem {
+  padding-top: 58%;
+}
+.lista-noticias .imagem {
+  width: 100%;
+  padding-top: 52%;
+  background: no-repeat center;
+  background-size: cover;
+  display: block;
+}
+.lista-noticias .date {
+  font-size: 11px;
+  color: #868686;
+}
+.lista-noticias .title {
+  margin: 5px 0;
+}
+.lista-noticias .destaque {
+  margin-bottom: 30px;
+}
+.lista-noticias .destaque .date {
+  background: #05adec;
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 10px 10px;
+  position: relative;
+}
+.lista-noticias .destaque .date .day {
+  font-size: 22px;
+}
+.lista-noticias .destaque .date .month {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.lista-noticias .destaque .date .fa {
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: -3px;
+  color: #05adec;
+}
+.lista-noticias .destaque .resumo {
+  margin-top: 15px;
+}
+.lista-galeria {
+  text-align: center;
+}
+.lista-galeria > li {
+  margin-bottom: 30px;
+}
+.lista-galeria .title {
+  font-size: 14px;
+  margin: 5px 0;
+  display: block;
+}
+.lista-galeria .imagem {
+  display: block;
+  width: 100%;
+  padding-top: 68%;
+  background: no-repeat center;
+  background-size: cover;
+}
+.page-header {
+  border: 0;
+}
 .pagination {
   width: 100%;
   text-align: center;
@@ -468,6 +528,33 @@ CLASSES END
 /*
 JQUERY UI START
 **********************************************************************************************/
+#tribe-events-content .tribe-events-calendar td {
+  border-color: transparent;
+}
+.tribe-events-calendar thead th,
+.tribe-events-calendar tbody th,
+.tribe-events-calendar thead td,
+.tribe-events-calendar tbody td {
+  border-color: transparent;
+}
+.tribe-events-calendar thead th {
+  background: #05529f;
+}
+.tribe-events-calendar div[id*="tribe-events-daynum-"],
+.tribe-events-calendar div[id*="tribe-events-daynum-"] a {
+  background: #75b8fb;
+}
+#tribe-events .tribe-events-button,
+#tribe-events .tribe-events-button:hover,
+#tribe_events_filters_wrapper input[type="submit"],
+.tribe-events-button,
+.tribe-events-button.tribe-active:hover,
+.tribe-events-button.tribe-inactive,
+.tribe-events-button:hover,
+.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"],
+.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a {
+  background: #f68634;
+}
 /**********************************************************************************************
 JQUERY UI END
 */

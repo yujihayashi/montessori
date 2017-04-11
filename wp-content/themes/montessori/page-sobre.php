@@ -18,7 +18,6 @@ get_header(); ?>
 while ( have_posts() ) : the_post();
 
 ?>
-<?php castilla_breadcrumb(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="page-header">
 		<div class="container">

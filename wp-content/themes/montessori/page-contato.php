@@ -18,38 +18,21 @@ get_header(); ?>
 while ( have_posts() ) : the_post();
 
 ?>
-<?php castilla_breadcrumb(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="page-header">
-		<div class="container">
+	<div class="container">
+		<div class="page-header">
 			<header class="entry-header">
-				<h1 class="text-warning">
+				<h1 class="text-center">
 					<?php
 						// twentyfourteen_post_thumbnail();
 					the_title();
 					?>
 				</h1>
 			</header>
-		</div> <!-- .container -->
-	</div> <!-- .page-header -->
-	<? if (get_the_post_thumbnail()) { ?>
-	<div class="box-imagem-full" style="">
-		<?php echo get_the_post_thumbnail(); ?>
-	</div> <!-- .box-imagem -->
-	<? } //if (get_the_post_thumbnail( $page )) { ?>
-	<div class="page-header">
-		<div class="container">
-			<header class="entry-header">
-				<h2 class="h1">
-					Mande sua mensagem
-				</h2>
-			</header>
-		</div> <!-- .container -->
-	</div> <!-- .page-header -->
-	<div class="page-contato">
-		<div class="container">
+		</div> <!-- .page-header -->
+		<div class="page-contato">
 			<div class="row">
-				<div class="col-md-7 col-md-offset-5">
+				<div class="col-md-8 col-md-offset-2">
 					<div class="entry-content">
 						<?php
 						the_content();
@@ -65,17 +48,12 @@ while ( have_posts() ) : the_post();
 						edit_post_link( __( 'Editar', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 						?>
 					</div><!-- .entry-content -->
-				</div> <!-- .col-md-7 -->
+				</div> <!-- .col-md-8 -->
 			</div> <!-- .row -->
-		</div> <!-- .container -->
-	</div> <!-- .page-contato -->
+		</div> <!-- .page-contato -->
+	</div> <!-- .container -->
 </article><!-- #post-## -->
 <?
-
-					// If comments are open or we have at least one comment, load up the comment template.
-				/*if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}*/
 				endwhile;
 				?>
 				

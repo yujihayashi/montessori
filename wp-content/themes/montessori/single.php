@@ -9,32 +9,10 @@
 
 get_header(); ?>
 
-<?php castilla_breadcrumb(); ?>
-<div class="page-header">
-	<div class="container">
-		<?
-		if (is_attachment()) {
-			?>
-			<h1 class="text-warning"><? the_title(); ?></h1>
-			<?
-		} //if (!is_attachment()) {
-			else {
-
-				$terms = get_the_terms( $post->ID, 'category' );
-				// print_r($terms);
-				$term = array_pop($terms);
-				?>
-				<h1 class="text-warning"><a href="<?php echo get_term_link($term->slug, 'category'); ?>" class=""><?= $term->name; ?></a></h1>
-				<? } ?>
-
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<?php
+<div class="container">
+	<?php
 				// Start the Loop.
-					while ( have_posts() ) : the_post();
+	while ( have_posts() ) : the_post();
 
 					/*
 					 * Include the post format-specific template for the content. If you want to
@@ -43,24 +21,10 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 
-					// Previous/next post navigation.
-					// twentyfourteen_post_nav();
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					/*if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}*/
 					endwhile;
 					?>
-				</div> <!-- .col-md-8 -->
-				<div class="col-md-4">
 
-				</div> <!-- .col-md-4 -->
-			</div> <!-- .row -->
-		</div> <!-- .container -->
+					</div> <!-- .container -->
 
-
-
-
-		<?php
-		get_footer();
+					<?php
+					get_footer();

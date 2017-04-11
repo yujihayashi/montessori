@@ -85,9 +85,27 @@ ESTRUTURA START
         }
     }
 }
+.bg-header {background: url(img/bg-interna.jpg) #EEE no-repeat center;background-size:cover;height: 224px;}
 .extra-central {position: relative;z-index: 1;}
+#sidebar {
+    padding-top:50px;
+    ul {padding-left:0;list-style: none;}
+    > ul {
+        > li {
+            h2 {
+                font-size: 20px;
+                &:after {content:" ";background: #959595;height: 2px;width: 40px;display: block;margin-top:14px;}
+            }
+            > ul {
+                > li {
+                    > a {display: inline-block;padding:3px 0;}
+                }
+            }
+        }
+    }
+}
 .extra-footer {
-
+    margin-top:50px;
     .site-footer {
         color: #dddddd;background: #117ec4;padding-top:36px;padding-bottom: 36px;
         a {color: #FFF;}
@@ -110,6 +128,9 @@ ESTRUTURA START
         .fa {font-size: 14px;}
     }
 }
+body.home {
+    .extra-footer {margin-top:0;}
+}
 /**********************************************************************************************
 ESTRUTURA END 
 */
@@ -120,6 +141,7 @@ CLASSES START
 form {   
     .ajax-loader {float: left;}
 }
+input[type="text"] {}
 .alignleft {margin-right: 18px;margin-bottom: 10px;float: left;}
 .alignright {margin-left: 18px;margin-bottom: 10px;float: right;}
 .aligncenter {display: block;margin:0 auto;}
@@ -132,21 +154,6 @@ form {
 .box-noticias, .box-tv {
     .title {margin:0;}
     .title a, .box-title a {color: @secondary-color;}
-}
-.box-noticias {
-    .imagem {width: 100%;padding-top:58%;background:no-repeat center;background-size:cover;display: block;}
-    .date {font-size: 11px;color: #868686;}
-    .title {margin:5px 0;}
-    .destaque {
-        margin-bottom: 30px;
-        .date {
-            background: @secondary-color;display: inline-block;color: #FFF;text-align: center;line-height: 1;padding:6px 10px 10px;position: relative;
-            .day {font-size: 22px;}
-            .month {font-size: 11px;text-transform: uppercase;}
-            .fa {position: absolute;top:50%;margin-top:-5px;right:-4px;color: @secondary-color;}
-        }
-            .resumo {margin-top:15px;}
-    }
 }
 .box-tv {
     .box-title {margin-bottom: -5px;line-height: 1;}
@@ -188,7 +195,10 @@ form {
 
 .galeria-detalhe {
     overflow: hidden;
-    ul {padding:0;list-style: none;}
+    ul {
+        padding:0;list-style: none;
+        > li {margin-bottom: 20px;}
+    }
     .imagem {display:block;width: 100%;background: no-repeat center;background-size: cover;height: 220px;}
 }
 
@@ -226,6 +236,34 @@ form {
 
 .inline-block {display:inline-block;}
 
+body.home {
+    .lista-noticias {
+        .imagem {padding-top:58%;}
+    }
+}
+.lista-noticias {
+    .imagem {width: 100%;padding-top:52%;background:no-repeat center;background-size:cover;display: block;}
+    .date {font-size: 11px;color: #868686;}
+    .title {margin:5px 0;}
+    .destaque {
+        margin-bottom: 30px;
+        .date {
+            background: @secondary-color;display: inline-block;color: #FFF;text-align: center;line-height: 1;padding:6px 10px 10px;position: relative;
+            .day {font-size: 22px;}
+            .month {font-size: 11px;text-transform: uppercase;}
+            .fa {position: absolute;top:50%;margin-top:-5px;right:-3px;color: @secondary-color;}
+        }
+        .resumo {margin-top:15px;}
+    }
+}
+.lista-galeria {
+    text-align: center;
+    > li {margin-bottom: 30px;}
+    .title {font-size: 14px;margin:5px 0;display: block;}
+    .imagem {display: block;width: 100%;padding-top:68%;background:no-repeat center;background-size:cover;}
+}
+
+.page-header {border:0;}
 .pagination {
     width: 100%;text-align: center;
     > li {
@@ -244,7 +282,24 @@ CLASSES END
 /*
 JQUERY UI START
 **********************************************************************************************/
+#tribe-events-content {
+    .tribe-events-calendar {
+        td {border-color: transparent;}
 
+    }
+}
+.tribe-events-calendar {
+    thead, tbody {
+        th, td {border-color: transparent;}
+    }
+    thead {
+        th {background: @primary-color;}
+    }
+    div[id*="tribe-events-daynum-"] {
+        &, a {background: lighten(@primary-color, 40%);}
+    }
+}
+#tribe-events .tribe-events-button, #tribe-events .tribe-events-button:hover, #tribe_events_filters_wrapper input[type="submit"], .tribe-events-button, .tribe-events-button.tribe-active:hover, .tribe-events-button.tribe-inactive, .tribe-events-button:hover, .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"], .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a {background: @third-color;}
 /**********************************************************************************************
 JQUERY UI END
 */
