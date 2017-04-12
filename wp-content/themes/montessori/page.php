@@ -14,10 +14,12 @@
 get_header(); ?>
 <div class="container">
 	<div class="row">
+		<?php if (get_post_ancestors( $post->ID )) { ?>
 		<div class="col-md-3">
 			<?php get_sidebar(); ?>
 		</div> <!-- col-md-3 -->
 		<div class="col-md-9">
+		<?php } else {echo "<div class='col-md-12'>";} ?>
 			<?php
 			while ( have_posts() ) : the_post();
 

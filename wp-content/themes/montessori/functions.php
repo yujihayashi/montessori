@@ -1,6 +1,6 @@
 <?
 add_theme_support( 'post-thumbnails' ); 
-    add_theme_support( 'title-tag' );
+add_theme_support( 'title-tag' );
 
 //Gets post cat slug and looks for single-[cat slug].php and applies it
 add_filter('single_template', create_function(
@@ -38,11 +38,11 @@ function projeto_paginacao( $query=null ) {
 		'type' => 'array',
 		'total' => $query->max_num_pages,
 		'format' => '?paged=%#%',
-	'show_all'           => True,
-		'current' => max( 1, get_query_var('paged') ),
-		'prev_text'          => __('<i class="fa fa-chevron-left"></i>'),
-		'next_text'          => __('<i class="fa fa-chevron-right"></i>'),
-		)
+     'show_all'           => True,
+     'current' => max( 1, get_query_var('paged') ),
+     'prev_text'          => __('<i class="fa fa-chevron-left"></i>'),
+     'next_text'          => __('<i class="fa fa-chevron-right"></i>'),
+     )
 	);
 
 	if ($query->max_num_pages > 1) :
@@ -58,6 +58,13 @@ function projeto_paginacao( $query=null ) {
 	endif;
 }
 
+    // Add theme support for selective refresh for widgets.
+add_theme_support( 'customize-selective-refresh-widgets' );
+// This theme uses wp_nav_menu() in two locations.
+register_nav_menus( array(
+    'primary'   => __( 'Top primary menu', 'twentyfourteen' ),
+    'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
+    ) );
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
     global $post;
@@ -79,7 +86,7 @@ function my_post_gallery($output, $attr) {
         'size' => 'thumbnail',
         'include' => '',
         'exclude' => ''
-    ), $attr));
+        ), $attr));
 
     $id = intval($id);
     if ('RAND' == $order) $orderby = 'none';

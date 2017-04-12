@@ -37,6 +37,10 @@
 				params = params + '&tribe_event_category=' + ts.category;
 			}
 
+			if ( tf.is_featured() ) {
+				params = params + '&featured=1';
+			}
+
 			history.replaceState( {
 				"tribe_params"    : params,
 				"tribe_url_params": td.params
@@ -61,7 +65,7 @@
 			} );
 		}
 
-		$( '#tribe-events-content-wrapper' ).on( 'click', 'ul.tribe-events-sub-nav a[rel="next"]',function( e ) {
+		$( '#tribe-events-content-wrapper,.tribe-events-view-wrapper' ).on( 'click', 'ul.tribe-events-sub-nav a[rel="next"]',function( e ) {
 			e.preventDefault();
 
 			if ( ts.ajax_running ) {
@@ -74,7 +78,7 @@
 
 			if ( $( this ).parent().is( '.tribe-events-past' ) ) {
 				ts.view = 'past';
-			} else if ( 'undefined' !== result[1] ) {
+			} else if ( result && 'undefined' !== typeof result[1] ) {
 				ts.view = result[1];
 			} else {
 				ts.view = 'list';
@@ -82,10 +86,28 @@
 
 			td.cur_url = tf.url_path( href );
 
-			if ( ! ts.paged ) {
-				ts.paged = 2;
+			reg = /tribe_paged=([^&]+)/ig;
+			result = reg.exec( href );
+
+			// use what is on the URL if possible
+			if ( result && 'undefined' !== typeof result[1] ) {
+				ts.paged = result[1];
 			} else {
-				ts.paged++;
+				// otherwise figure it out based on the current page and direction
+				if ( 'list' === ts.view ) {
+					if ( ! ts.paged ) {
+						ts.paged = 2;
+					} else {
+						ts.paged++;
+					}
+				} else {
+					if ( ! ts.paged ) {
+						ts.view = 'list';
+						ts.paged = 1;
+					} else {
+						ts.paged--;
+					}
+				}
 			}
 
 			ts.popping = false;
@@ -105,17 +127,30 @@
 
 			if ( $( this ).parent().is( '.tribe-events-past' ) ) {
 				ts.view = 'past';
-			} else if ( 'undefined' !== result[1] ) {
+			} else if ( result && 'undefined' !== typeof result[1] ) {
 				ts.view = result[1];
 			} else {
 				ts.view = 'list';
 			}
 
+			reg = /tribe_paged=([^&]+)/ig;
+			result = reg.exec( href );
+
 			td.cur_url = tf.url_path( $( this ).attr( 'href' ) );
 
-			if ( ts.paged > 1 ) {
-				ts.paged--;
+			if ( result && 'undefined' !== typeof result[1] ) {
+				ts.paged = result[1];
+			} else if ( 'list' === ts.view ) {
+				if ( ts.paged > 1 ) {
+					ts.paged--;
+				} else {
+					ts.paged = 1;
+					ts.view = 'past';
+				}
+			} else {
+				ts.paged++;
 			}
+
 			ts.popping = false;
 			tf.pre_ajax( function() {
 				tribe_events_list_ajax_post();
@@ -143,7 +178,9 @@
 				if ( pathname.match( /\/all\/$/ ) ) {
 					ts.view = 'all';
 				} else {
-					ts.view = 'list';
+					var display = tribeUtils.getQueryVars().tribe_event_display;
+
+					ts.view = undefined !== display ? display : 'list';
 				}
 
 				ts.popping = false;
@@ -167,7 +204,7 @@
 			tribe_events_bar_listajax_actions( e );
 		} );
 
-		$( te ).on( "tribe_ev_runAjax", function() {
+		$( te ).on( 'tribe_ev_runAjax', function() {
 			tribe_events_list_ajax_post();
 		} );
 
@@ -195,7 +232,8 @@
 				ts.params = {
 					action             : 'tribe_list',
 					tribe_paged        : ts.paged,
-					tribe_event_display: ts.view
+					tribe_event_display: ts.view,
+					featured           : tf.is_featured()
 				};
 
 				ts.url_params = {
@@ -299,6 +337,8 @@
 							}
 
 							$( te ).trigger( 'tribe_ev_ajaxSuccess' ).trigger( 'tribe_ev_listView_AjaxSuccess' );
+							$( te ).trigger( 'ajax-success.tribe' ).trigger( 'tribe_ev_listView_AjaxSuccess' );
+
 							// @ifdef DEBUG
 							dbug && debug.timeEnd( 'List View Ajax Timer' );
 							// @endif

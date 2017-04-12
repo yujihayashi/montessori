@@ -5,10 +5,11 @@ Plugin URI: http://simple-history.com
 Text Domain: simple-history
 Domain Path: /languages
 Description: Plugin that logs various things that occur in WordPress and then presents those events in a very nice GUI.
-Version: 2.1.3
+Version: 2.13
 Author: Pär Thernström
 Author URI: http://simple-history.com/
 License: GPL2
+GitHub Plugin URI: https://github.com/bonny/WordPress-Simple-History
 */
 
 /*  Copyright 2015  Pär Thernström (email: par.thernstrom@gmail.com)
@@ -33,10 +34,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 if ( version_compare( phpversion(), "5.3", ">=") ) {
 
-	/** Load required files */
-	require_once(__DIR__ . "/inc/SimpleHistory.php");
-	require_once(__DIR__ . "/inc/SimpleHistoryLogQuery.php");
-
 	/**
 	 * Register function that is called when plugin is installed
 	 *
@@ -45,7 +42,7 @@ if ( version_compare( phpversion(), "5.3", ">=") ) {
 	// register_activation_hook( trailingslashit(WP_PLUGIN_DIR) . trailingslashit( plugin_basename(__DIR__) ) . "index.php" , array("SimpleHistory", "on_plugin_activate" ) );
 
 	if ( ! defined( 'SIMPLE_HISTORY_VERSION' ) ) {
-		define( 'SIMPLE_HISTORY_VERSION', '2.1.3' );
+		define( 'SIMPLE_HISTORY_VERSION', '2.13' );
 	}
 
 	if ( ! defined( 'SIMPLE_HISTORY_PATH' ) ) {
@@ -63,6 +60,10 @@ if ( version_compare( phpversion(), "5.3", ">=") ) {
 	if ( ! defined( 'SIMPLE_HISTORY_FILE' ) ) {
 		define( 'SIMPLE_HISTORY_FILE', __FILE__ );
 	}
+
+	/** Load required files */
+	require_once(__DIR__ . "/inc/SimpleHistory.php");
+	require_once(__DIR__ . "/inc/SimpleHistoryLogQuery.php");
 
 	// Prev behavior:
 	/*
@@ -93,10 +94,12 @@ if ( version_compare( phpversion(), "5.3", ">=") ) {
 		?>
 		<div class="updated error">
 			<p><?php
+
 				printf(
 					__( 'Simple History is a great plugin, but to use it your server must have at least PHP 5.3 installed (you have version %s).', 'simple-history' ),
 					phpversion()
 				);
+
 				?></p>
 		</div>
 		<?php
@@ -104,4 +107,3 @@ if ( version_compare( phpversion(), "5.3", ">=") ) {
 	}
 
 }
-

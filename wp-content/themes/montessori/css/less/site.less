@@ -85,10 +85,13 @@ ESTRUTURA START
         }
     }
 }
-.bg-header {background: url(img/bg-interna.jpg) #EEE no-repeat center;background-size:cover;height: 224px;}
+.bg-header {
+    background: url(img/bg-interna.jpg) #EEE no-repeat center;background-size:cover;height: 224px;position: relative;
+    .mask {position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: url(img/bg-white.png) repeat-x top;}
+}
 .extra-central {position: relative;z-index: 1;}
-#sidebar {
-    padding-top:50px;
+#sidebar, .sidebar {
+    padding-top:30px;
     ul {padding-left:0;list-style: none;}
     > ul {
         > li {
@@ -263,7 +266,10 @@ body.home {
     .imagem {display: block;width: 100%;padding-top:68%;background:no-repeat center;background-size:cover;}
 }
 
-.page-header {border:0;}
+.page-header {
+    border:0;
+    h1 {text-transform: uppercase;color: @primary-color;}
+}
 .pagination {
     width: 100%;text-align: center;
     > li {

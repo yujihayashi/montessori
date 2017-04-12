@@ -18,9 +18,29 @@
 			return;
 		}
 
+		// since 24 sept 2016 ipinfo supports ssl/https for all users, so we can enable ipinfo for all
+		// https://twitter.com/ipinfoio/status/779374440417103872
 		showPopup($elm);
 
 		return lookupIpAddress(ipAddress);
+
+
+		/*
+		// If we are on a HTTPS site we cant use ipinfo because lookups over https require pro account
+		// Fallback to plain link
+		var isHTTPS = document.location.protocol == "https:";
+
+		if (isHTTPS) {
+			
+			return true;
+
+		} else {
+
+			showPopup($elm);
+
+			return lookupIpAddress(ipAddress);
+		}
+		*/
 
 	});
 
@@ -81,17 +101,38 @@
 	// Init request to lookup address
 	function lookupIpAddress(ipAddress) {
 
-		$.get("http://ipinfo.io/" + ipAddress, onIpAddressLookupkResponse, "jsonp");
+		//try {
+		
+			var ajax = $.get("https://ipinfo.io/" + ipAddress, onIpAddressLookupResponse, "jsonp");
 
-		return false;
+			// If the ajax call fail, for example because of blocked connections using adblocker-similar software
+			// err_blocked_by_client
+			// ajax.fail(onIpAddressLookupResponseError);
+			// I don't manage to get this to work, I can't find any way to detect err_blocked_by_client
+
+			return false;
+		//}
+
+		//catch (error) {
+		//	console.log("error", error);
+		//}
 
 	}
 
 	// Function called when ip adress lookup succeeded
-	function onIpAddressLookupkResponse(d) {
-	
+	function onIpAddressLookupResponse(d) {
+		
 		$popupContent.html(templateLoaded(d));
 
 	}
+
+	/*
+	function onIpAddressLookupResponseError(d) {
+
+		console.log("onIpAddressLookupResponseError", d);
+		$popupContent.html(templateLoaded(d));
+
+	}
+	*/
 
 })(jQuery);

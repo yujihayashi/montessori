@@ -21,20 +21,8 @@ get_header(); ?>
 	<div class="page-header">
 		<div class="container">
 			<header class="">
-				<h1 class="text-warning">
-					Eventos
-				</h1>
-			</header>
-		</div> <!-- .container -->
-	</div> <!-- .page-header -->
-	<div class="box-imagem" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/eventos.jpg);">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" class="pixel" alt="">
-	</div> <!-- .box-imagem -->
-	<div class="page-header">
-		<div class="container">
-			<header class="">
-				<h1 class="">
-					Próximos eventos
+				<h1 class="text-center">
+					Calendário
 				</h1>
 			</header>
 		</div> <!-- .container -->

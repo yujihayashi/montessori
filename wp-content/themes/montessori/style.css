@@ -119,22 +119,35 @@ ESTRUTURA START
   background: url(img/bg-interna.jpg) #eeeeee no-repeat center;
   background-size: cover;
   height: 224px;
+  position: relative;
+}
+.bg-header .mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(img/bg-white.png) repeat-x top;
 }
 .extra-central {
   position: relative;
   z-index: 1;
 }
-#sidebar {
-  padding-top: 50px;
+#sidebar,
+.sidebar {
+  padding-top: 30px;
 }
-#sidebar ul {
+#sidebar ul,
+.sidebar ul {
   padding-left: 0;
   list-style: none;
 }
-#sidebar > ul > li h2 {
+#sidebar > ul > li h2,
+.sidebar > ul > li h2 {
   font-size: 20px;
 }
-#sidebar > ul > li h2:after {
+#sidebar > ul > li h2:after,
+.sidebar > ul > li h2:after {
   content: " ";
   background: #959595;
   height: 2px;
@@ -142,7 +155,8 @@ ESTRUTURA START
   display: block;
   margin-top: 14px;
 }
-#sidebar > ul > li > ul > li > a {
+#sidebar > ul > li > ul > li > a,
+.sidebar > ul > li > ul > li > a {
   display: inline-block;
   padding: 3px 0;
 }
@@ -490,6 +504,10 @@ body.home .lista-noticias .imagem {
 }
 .page-header {
   border: 0;
+}
+.page-header h1 {
+  text-transform: uppercase;
+  color: #05529f;
 }
 .pagination {
   width: 100%;
