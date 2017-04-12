@@ -46,9 +46,10 @@ label {font-weight: normal;}
 FONTS START
 **********************************************************************************************/
 .footer-phone, .footer-header, .box-title {font-family: 'ralewayextralight', Arial, sans-serif;font-weight: normal;}
-.navbar-principal .active, .box-tv .box-title {font-family: 'ralewayextrabold', Arial, sans-serif;font-weight: normal;}
+.navbar-principal > li.current-menu-item, .navbar-principal .current-menu-parent > a, .navbar-principal .active, .box-tv .box-title {font-family: 'ralewayextrabold', Arial, sans-serif;font-weight: normal;}
 .destaque .date .day {font-family: 'ralewaybold', Arial, sans-serif;font-weight: normal;}
 .lista-noticias .title {font-family: 'ralewaymedium', Arial, sans-serif;font-weight: normal;}
+.menu-item-has-children:after {font: normal normal normal 14px/1 FontAwesome;}
 /**********************************************************************************************
 FONTS END
 */
@@ -60,6 +61,27 @@ ESTRUTURA START
     position: absolute;left: 0;top: 0;right: 0;z-index: 2;
     .navbar-principal {
         font-size: 14px;
+        > li {
+            position: relative;
+            ul {
+                display: none;position: absolute;background: #FFF;min-width: 140px;left:0;font-size: 12px;box-shadow:0 0 5px rgba(0, 0, 0, 5%);
+                > li {
+                    > a {display: block;padding:10px 15px;}
+                }
+            }
+            &.menu-item-has-children:after {content:"\f0d8";color:#FFF;display: none;position: absolute;right: 50%;bottom:-5px;font-size: 20px;margin-right:-6px;}
+            &:hover {
+                ul {display: block;}
+                &.menu-item-has-children:after {display: block;}
+            }
+        }
+        &.navbar-right {
+            > li {
+                ul {
+                    right:0;top:100%;left:inherit;
+                }
+            }
+        }
     }
     .line-1 {
         padding-top:15px;

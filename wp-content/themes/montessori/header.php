@@ -49,7 +49,7 @@
 									</div> <!-- navbar-header -->
 								</div> <!-- col-md-2 -->
 								<div class="col-md-10">
-									<div class="line-1">
+									<div class="line-1 clearfix">
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary">
 											<span class="sr-only">Navegação</span>
 											<span class="icon-bar"></span>
@@ -66,8 +66,9 @@
 											<li><a href="#" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
 										</ul>
 									</div> <!-- .line-1 -->
-									<div class="line-2">
+									<div class="line-2 clearfix">
 										<div class="collapse navbar-collapse navbar-primary">
+											<? /* 
 											<ul class="nav navbar-nav navbar-right navbar-principal">
 												<li class="active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
 												<li><a href="<?php echo site_url('/o-mundo-montessori/'); ?>">O mundo Montessori</a></li>
@@ -78,7 +79,8 @@
 												<li><a href="<?php echo site_url('/category/noticias/'); ?>">Notícias</a></li>
 												<li><a href="<?php echo site_url('/contato/'); ?>">Contato</a></li>
 											</ul>
-											<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav', 'link_before' => '', 'link_after' => ' <span class="icon-arrow-down icone"></span>', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
+											*/ ?>
+											<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav navbar-right navbar-principal ', 'link_before' => '', 'link_after' => ' <span class="icon-arrow-down icone"></span>', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 										</div><!-- /.navbar-collapse -->
 									</div> <!-- .line-2 -->
 								</div> <!-- col-md-10 -->

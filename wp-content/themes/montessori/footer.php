@@ -25,13 +25,7 @@
 						<li>
 							<a href="#" class="footer-header">Institucional</a>
 							<ul>
-								<li><a href="#" title="">O mundo Montessori</a></li>
-								<li><a href="#" title="">Matrícula Online</a></li>
-								<li><a href="#" title="">Agenda Kids</a></li>
-								<li><a href="#" title="">Notícias</a></li>
-								<li><a href="#" title="">Galeria</a></li>
-								<li><a href="#" title="">Calendário</a></li>
-								<li><a href="#" title="">Contato</a></li>
+								<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 							</ul>
 						</li>
 					</ul>
@@ -43,27 +37,16 @@
 							<ul>
 								<?php 
 								$my_wp_query = new WP_Query(  );
-								//$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'post_parent ' => 0, 'order'   => 'ASC'));
-								$args = array( 
-									'child_of' => get_page_by_title('Cursos')->ID, 
-									'parent' => $post->ID,
-									'hierarchical' => 0,
-									'sort_column' => 'menu_order', 
-									'sort_order' => 'asc'
-									);
-								$staff = get_pages( $args );
-								//$staff = get_page_children(get_page_by_title('Cursos')->ID, $all_wp_pages);
+								$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'post_parent ' => 0, 'order'   => 'ASC'));
+
+								$staff = get_page_children(get_page_by_title('Peteleco')->ID, $all_wp_pages);
 
 								foreach($staff as $s){
 									$page = $s->ID;
 									$page_data = get_page($page);
-									$content = $page_data->post_content;
 									$childrenPermalink = get_page_uri($page_data);
 									$childrenName = $page_data->post_name;
 									$childrenTitle = $page_data->post_title;
-									$content = apply_filters('the_content',$content);
-									$content = str_replace(']]>', ']]>', $content);
-
 									?>
 									<li><a href="<?php echo $childrenPermalink; ?>" title="<?php echo $childrenTitle; ?>"><?php echo $childrenTitle; ?></a></li>
 									<?php
@@ -78,9 +61,24 @@
 								<li>
 									<a href="javascript:void(0);" class="footer-header">CEMP</a>
 									<ul>
-										<li><a href="#" title="">Blog do Castilla Idiomas</a></li>
-										<li><a href="#" title="">Guia de Intercâmbio</a></li>
-										<li><a href="#" title="">Seja um Franqueado</a></li>
+										<?php 
+										$my_wp_query = new WP_Query(  );
+										$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'post_parent ' => 0, 'order'   => 'ASC'));
+
+										$staff = get_page_children(get_page_by_title('cemp')->ID, $all_wp_pages);
+
+										foreach($staff as $s){
+											$page = $s->ID;
+											$page_data = get_page($page);
+											$childrenPermalink = get_page_uri($page_data);
+											$childrenName = $page_data->post_name;
+											$childrenTitle = $page_data->post_title;
+
+											?>
+											<li><a href="<?php echo $childrenPermalink; ?>" title="<?php echo $childrenTitle; ?>"><?php echo $childrenTitle; ?></a></li>
+											<?php
+									} // foreach($staff as $s){
+										?>
 									</ul>
 								</li>
 							</ul>
