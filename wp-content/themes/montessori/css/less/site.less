@@ -212,7 +212,7 @@ input[type="text"] {}
     }
 }
 
-.entry-content {padding:30px 0;}
+.entry-content {padding:10px 0;}
 .entry-content:before, .entry-content:after {display: table;content: " ";}
 .entry-content:after {clear: both;}
 
@@ -229,14 +229,17 @@ input[type="text"] {}
 
 .home-banner {
     position: relative;
-    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height:  480px;width: 100%;}
+    &, .cycle-slideshow, .cycle-slideshow li, .cycle-slideshow .content {height:  100%;width: 100%;}
     .cycle-slideshow {
         position: relative;z-index: 1;
         li {
-            .content {background:no-repeat center;background-size: cover;}
         }
         li {
-            > a {display: block;}
+            > a {display: block;
+                img {position: relative;z-index: 1;}
+                &:before {display: block;position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: url(img/bg-white.png) repeat-x top;z-index: 2;content: " ";}
+            }
+            .content {background:no-repeat center;background-size: cover;}
             img {width: 100%;}
         }
     }
@@ -253,7 +256,6 @@ input[type="text"] {}
             &.cycle-pager-active {color: #FFF;}
         }
     }
-    .mask {position: absolute;left: 0;right: 0;top: 0;bottom: 0;background: url(img/bg-white.png) repeat-x top;}
 }
 .home-blocos {
     padding-top:30px;padding-bottom: 30px;background: url(img/bg-home.jpg) repeat center;
@@ -289,7 +291,7 @@ body.home {
 }
 
 .page-header {
-    border:0;
+    border:0;margin-bottom: 0;
     h1 {text-transform: uppercase;color: @primary-color;}
 }
 .pagination {
@@ -335,7 +337,7 @@ JQUERY UI END
 
 }
 @media (max-width: 981px) {
-
+    
 }
 @media (min-width: 768px) {
     .navbar-collapse {padding-left: 0;padding-right: 0;}
@@ -344,6 +346,38 @@ JQUERY UI END
     }
 }
 @media (max-width: 767px) {
+    .bg-header .mask {display: none;}
+    .navbar-brand {height: auto;}
+    .extra-header {
+        position: relative;
+        .navbar-principal {
+            > li {
+                ul {position: relative;}
+            }
+        }
+        .line-1 {
+            .navbar-social {display: none;}
+            .navbar-sublinks {
+                width: 100%;margin-left:10px;
+                > li {display: inline-block;float: none;}
+            }
+        }
+        
+    }
+
+
+    .extra-footer {
+        .footer-menu {
+            text-align: center;
+            .media-body {display: inline-block;width: inherit;}
+            .media-left {float: none;display: inline-block;}
+        }
+        .footer-social {
+            text-align: center;width: 100%;
+            > li {float: none;display:inline-block;}
+        }
+    }
+    .home-banner .cycle-slideshow li > a::before {display: none;}
 
 }
 @media (max-width: 480px) {
@@ -353,7 +387,18 @@ JQUERY UI END
 
 }
 @media (min-width: 768px) and (max-width: 980px) {
+    .navbar-left {z-index: 10;}
+    .navbar-right {z-index: 1;}
+    .navbar-brand img {max-height: 40px;}
 
+    .extra-header {
+        .navbar-principal {
+            font-size: 12px;
+            > li {
+                > a {padding-left: 10px;padding-right: 10px;}
+            }
+        }
+    }
 }
 @media (min-width: 981px) and (max-width: 1200px) {
 

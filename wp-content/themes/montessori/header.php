@@ -43,43 +43,31 @@
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="container">
 							<div class="row">
-								<div class="col-md-2">
+								<div class="col-md-2 navbar-left">
 									<div class="navbar-header">
-										<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori.png" alt="Logotipo Mundo Montessori"></a>
-									</div> <!-- navbar-header -->
-								</div> <!-- col-md-2 -->
-								<div class="col-md-10">
-									<div class="line-1 clearfix">
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary">
 											<span class="sr-only">Navegação</span>
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
-										</button>								
+										</button>
+										<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori.png" alt="Logotipo Mundo Montessori"></a>
+									</div> <!-- navbar-header -->
+								</div> <!-- col-md-2 -->
+								<div class="col-md-10 navbar-right">
+									<div class="line-1 clearfix">								
 										<ul class="nav navbar-nav navbar-right navbar-social">
-											<li><a href="#" title="Acesse nosso"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#" title="Acesse nosso"><i class="fa fa-instagram"></i></a></li>
-											<li><a href="#" title="Acesse nosso"><i class="fa fa-youtube"></i></a></li>
+											<li><a href="https://www.facebook.com/escolapeteleco/" title="Acesse nosso Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+											<?php //<li><a href="#" title="Acesse nosso Instagram"><i class="fa fa-instagram" target="_blank"></i></a></li> ?>
+											<li><a href="https://www.youtube.com/channel/UCwbXzlt_YwFUiN3JmEIuTBg" title="Acesse nosso Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
 										</ul>
 										<ul class="nav navbar-nav navbar-right navbar-sublinks">
-											<li class="btn-matricula-online"><a href="#"><i class="fa fa-user"></i> Matrícula online</a></li>
-											<li><a href="#" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
+											<li class="btn-matricula-online"><a href="<?php echo site_url('matricula-online'); ?>"><i class="fa fa-user"></i> Matrícula online</a></li>
+											<li><a href="<?php echo site_url('agenda-kids'); ?>" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
 										</ul>
 									</div> <!-- .line-1 -->
 									<div class="line-2 clearfix">
 										<div class="collapse navbar-collapse navbar-primary">
-											<? /* 
-											<ul class="nav navbar-nav navbar-right navbar-principal">
-												<li class="active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
-												<li><a href="<?php echo site_url('/o-mundo-montessori/'); ?>">O mundo Montessori</a></li>
-												<li><a href="<?php echo site_url('/peteleco/'); ?>">Peteleco</a></li>
-												<li><a href="<?php echo site_url('/cemp/'); ?>">CEMP</a></li>
-												<li><a href="<?php echo site_url('/calendario/'); ?>">Calendário</a></li>
-												<li><a href="<?php echo site_url('/category/galeria/'); ?>">Galeria</a></li>
-												<li><a href="<?php echo site_url('/category/noticias/'); ?>">Notícias</a></li>
-												<li><a href="<?php echo site_url('/contato/'); ?>">Contato</a></li>
-											</ul>
-											*/ ?>
 											<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav navbar-right navbar-principal ', 'link_before' => '', 'link_after' => ' <span class="icon-arrow-down icone"></span>', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 										</div><!-- /.navbar-collapse -->
 									</div> <!-- .line-2 -->

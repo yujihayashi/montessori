@@ -13,17 +13,17 @@
 					</p>
 					<br>
 					<p>
-						<a href="#" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids-white.png" alt="Agenda Kids"></a>
+						<a href="<?php echo site_url('agenda-kids'); ?>" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids-white.png" alt="Agenda Kids"></a>
 					</p>
 					<p>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/app-store.png" alt="Disponível na App Store"></a>
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/google-play.png" alt="Disponível no Google Play"></a>
+						<a href="https://itunes.apple.com/us/app/agenda-kids/id924641763" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/app-store.png" alt="Disponível na App Store"></a>
+						<a href="https://play.google.com/store/apps/details?id=com.agendakidsdigital.app" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/google-play.png" alt="Disponível no Google Play"></a>
 					</p>
 				</div> <!-- .col-md-3 -->
 				<div class="col-md-2 col-sm-3">
 					<ul class="footer-menu">
 						<li>
-							<a href="#" class="footer-header">Institucional</a>
+							<span class="footer-header">Institucional</span>
 							<ul>
 								<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 							</ul>
@@ -33,7 +33,7 @@
 				<div class="col-md-2 col-sm-3">
 					<ul class="footer-menu">
 						<li>
-							<a href="#" class="footer-header">Peteleco</a>
+							<span class="footer-header">Peteleco</span>
 							<ul>
 								<?php 
 								$my_wp_query = new WP_Query(  );
@@ -59,7 +59,7 @@
 						<div class="col-md-2 col-sm-3">
 							<ul class="footer-menu">
 								<li>
-									<a href="javascript:void(0);" class="footer-header">CEMP</a>
+									<span class="footer-header">CEMP</span>
 									<ul>
 										<?php 
 										$my_wp_query = new WP_Query(  );
@@ -86,7 +86,7 @@
 						<div class="col-md-3 col-sm-3">
 							<ul class="footer-menu">
 								<li>
-									<a href="javascript:void(0);" class="footer-header">Contatos</a>
+									<span class="footer-header">Contatos</span>
 									<ul class="media-list footer-contatos">
 										<li class="media">
 											<span class="media-left media-middle"><i class="fa fa-phone"></i></span>
@@ -97,7 +97,7 @@
 										<li class="media">
 											<span class="media-left media-middle"><i class="fa fa-envelope"></i></span>
 											<div class="media-body">
-												<a href="mailto:peteleco@peteleco.com.br" class="footer-mail">peteleco@peteleco.com.br</a>
+												<a href="mailto:contato@mundomontessori.com.br" class="footer-mail">contato@mundomontessori.com.br</a>
 											</div> <!-- media-body -->
 										</li>
 										<li class="media">
@@ -109,15 +109,12 @@
 									</ul>
 								</li>
 								<li>
-									<a href="javascript:void(0);" class="footer-header">Siga-nos</a>
+									<span class="footer-header">Siga-nos</span>
 									<ul class="footer-social clearfix">
-										<li><a href="#" title="Acesse nosso Twitter"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#" title="Acesse nosso Facebook"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#" title="Acesse nosso Instagram"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="#" title="Acesse nosso Youtube"><i class="fa fa-youtube"></i></a></li>
-										<li><a href="#" title="Acesse nosso Google+"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#" title="Acesse nosso Linkedin"><i class="fa fa-linkedin"></i></a></li>
-										<li><a href="#" title="Acesse nosso RSS"><i class="fa fa-rss"></i></a></li>
+										<?php //<li><a href="#" title="Acesse nosso Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>?>
+										<li><a href="https://www.facebook.com/escolapeteleco/" title="Acesse nosso Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<?php // <li><a href="#" title="Acesse nosso Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li> ?>
+										<li><a href="https://www.youtube.com/channel/UCwbXzlt_YwFUiN3JmEIuTBg" title="Acesse nosso Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
 									</ul>
 								</li>
 							</ul>

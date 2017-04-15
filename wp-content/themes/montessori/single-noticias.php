@@ -43,7 +43,7 @@ get_header(); ?>
 							<ul class="lista-noticias row">
 								<?
 								global $post;
-								$args = array( 'numberposts' => 3, 'category_name' => 'noticias' );
+								$args = array( 'numberposts' => 3, 'category_name' => 'noticias', 'exclude' => get_the_ID() );
 								$posts = get_posts( $args );
 								if ($posts) {
 									foreach( $posts as $post ): setup_postdata($post); 

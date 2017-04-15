@@ -25,20 +25,10 @@ get_header(); ?>
 			'category_orderby' => 'name',
 			'category_order'   => 'ASC',
 			'class'            => 'linkcat',
-			'category_before'  => '<div>',
+			'category_before'  => '<li id=%id class=%class>',
 			'show_name'		=> false,
-			'category_after'   => '</div>' ); ?> 
+			'category_after'   => '</li>' ); ?> 
 			<?php wp_list_bookmarks($args); ?>
-		<? /* <li>
-			<div class="content" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/banner-01.jpg);">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/pixel.gif" alt="pixel" class="pixel">
-			</div> <!-- .content -->
-		</li> */ ?>
-		<li>
-			<div class="content" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/banner-01.jpg);">
-				<div class="mask"></div>
-			</div> <!-- .content -->
-		</li>
 	</ul>
 	<div class="cycle-nav"></div>
 	<div class="color-bar clearfix">
@@ -103,7 +93,7 @@ get_header(); ?>
 									</li>
 									<?php
 									endforeach; 
-								}
+								} else { echo '<li>No momento não há nenhuma notícia publicada.</li>';}
 								?>
 								<?
 								global $post;
@@ -127,7 +117,7 @@ get_header(); ?>
 									</li>
 									<?php
 									endforeach; 
-								} else { echo '<li>No momento não há nenhuma notícia publicada.</li>';}
+								} 
 								?>
 							</ul>
 							<p>
@@ -167,7 +157,7 @@ get_header(); ?>
 						<div class="box-content">
 							<?
 							global $post;
-							$args = array( 'numberposts' => 1, 'category_name' => 'videos' );
+							$args = array( 'numberposts' => 1, 'category_name' => 'TV Montessori' );
 							$posts = get_posts( $args );
 							$category_id = get_cat_ID( 'Videos' );
 
