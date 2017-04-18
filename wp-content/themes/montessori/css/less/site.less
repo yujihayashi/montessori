@@ -48,7 +48,7 @@ FONTS START
 .footer-phone, .footer-header, .box-title {font-family: 'ralewayextralight', Arial, sans-serif;font-weight: normal;}
 .navbar-principal > li.current-menu-item, .navbar-principal .current-menu-parent > a, .navbar-principal .active, .box-tv .box-title {font-family: 'ralewayextrabold', Arial, sans-serif;font-weight: normal;}
 .destaque .date .day {font-family: 'ralewaybold', Arial, sans-serif;font-weight: normal;}
-.lista-noticias .title {font-family: 'ralewaymedium', Arial, sans-serif;font-weight: normal;}
+.lista-noticias .title, .extra-header .navbar-principal > li.menu-item-object-page.menu-item-has-children, .extra-header .navbar-principal > li.menu-item-object-custom.menu-item-has-children {font-family: 'ralewaymedium', Arial, sans-serif;font-weight: normal;}
 .menu-item-has-children:after {font: normal normal normal 14px/1 FontAwesome;}
 /**********************************************************************************************
 FONTS END
@@ -69,7 +69,8 @@ ESTRUTURA START
                     > a {display: block;padding:10px 15px;}
                 }
             }
-            &.menu-item-has-children:after {content:"\f0d8";color:#FFF;display: none;position: absolute;right: 50%;bottom:-5px;font-size: 20px;margin-right:-6px;}
+            &.menu-item-has-children:after {content:"\f0d8";color:#FFF;display: none;position: absolute;right: 50%;bottom:-7px;font-size: 20px;margin-right:-6px;}
+            &.menu-item-object-page.menu-item-has-children, &.menu-item-object-custom.menu-item-has-children {font-size: 16px;}
             &:hover {
                 ul {display: block;}
                 &.menu-item-has-children:after {display: block;}

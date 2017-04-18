@@ -62,7 +62,9 @@
 											<li><a href="https://www.youtube.com/channel/UCwbXzlt_YwFUiN3JmEIuTBg" title="Acesse nosso Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
 										</ul>
 										<ul class="nav navbar-nav navbar-right navbar-sublinks">
+											<?php if ( get_post_status( get_page_by_title('Matricula online') ) == 'publish') { ?>
 											<li class="btn-matricula-online"><a href="<?php echo site_url('matricula-online'); ?>"><i class="fa fa-user"></i> Matrícula online</a></li>
+											<?php } //if ( get_post_status( get_page_by_title('Matricula online') ) == 'publish') { ?>
 											<li><a href="<?php echo site_url('agenda-kids'); ?>" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
 										</ul>
 									</div> <!-- .line-1 -->
