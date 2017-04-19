@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for xml compliance -->
+<krpano version="1.0.8.14">
+    <!-- actions to perform while loading -->
+    <events onxmlcomplete="onxmlcompleteaction();"/>
+    <action name="onxmlcompleteaction">
+		firstloadcompleteaction();
+	</action>
+    <events onloadcomplete="onloadcompleteaction();"/>
+    <action name="onloadcompleteaction">
+		if(plugin[data].soundOn==false,stoppanosounds(),playpanosounds());
+	</action>
+    <action name="playpanosounds">
+		playbackgroundsound(none);
+	</action>
+    <action name="stoppanosounds">
+		stopbackgroundsound();
+	</action>
+    <action name="closepanoobjects">
+	</action>
+    <!--************** Panorama *******************************************************************-->
+    <!-- @File="Peteleco11.xml" @PanoName="Secretaria" @FilePath="D:/Marcos/Tour_Virtual/Sphere360_Nossa_Empresa/Clientes/Peteleco/Peteleco/Secretaria.jpg" -->
+    <panoview h="0" v="0" fov="90"/>
+    <!-- view parameters -->
+    <view fisheye="0" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.0" fovmax="90" fov="90" hlookat="0" vlookat="0"/>
+    <progress showload="bar(midbottom, 100%, 2, 0, 55, shaded, 0x0a0a0a, 0x4a9fff, 0x4a9fff, 0x9f9f9f, 0, 0x9f9f9f, 0)" showreloads="true" showwait=""/>
+    <autorotate horizon="0" tofov="90" waittime="1" speed="7"/>
+    <!-- preview image -->
+    <preview url="Petelecodata/Peteleco11/preview.jpg" type="CUBESTRIP" striporder="FRBLUD" details="16"/>
+    <!-- the pano itself -->
+    <image type="CUBE" multires="true" tilesize="821" baseindex="0">
+        <level tiledimagewidth="1641" tiledimageheight="1641">
+            <left url="Petelecodata/Peteleco11/3/1/%v_%u.jpg"/>
+            <front url="Petelecodata/Peteleco11/0/1/%v_%u.jpg"/>
+            <right url="Petelecodata/Peteleco11/1/1/%v_%u.jpg"/>
+            <back url="Petelecodata/Peteleco11/2/1/%v_%u.jpg"/>
+            <up url="Petelecodata/Peteleco11/4/1/%v_%u.jpg"/>
+            <down url="Petelecodata/Peteleco11/5/1/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="820" tiledimageheight="820">
+            <left url="Petelecodata/Peteleco11/3/0/%v_%u.jpg"/>
+            <front url="Petelecodata/Peteleco11/0/0/%v_%u.jpg"/>
+            <right url="Petelecodata/Peteleco11/1/0/%v_%u.jpg"/>
+            <back url="Petelecodata/Peteleco11/2/0/%v_%u.jpg"/>
+            <up url="Petelecodata/Peteleco11/4/0/%v_%u.jpg"/>
+            <down url="Petelecodata/Peteleco11/5/0/%v_%u.jpg"/>
+        </level>
+    </image>
+    <!--************** Hotspots and lensflares ****************************************************-->
+    <hotspot name="spot28" hview="0" vview="0" fovview="90" hcenter="-149.839" vcenter="5.90625" onclick="mainloadpano(Peteleco7.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Hall de Entrada);" ath="210.161" atv="5.90625"/>
+    <action name="hidepanospotsaction">
+		set(hotspot[spot28].visible, false);
+	</action>
+    <action name="showpanospotsaction">
+		set(hotspot[spot28].visible, true);
+	</action>
+    <!-- close all hotspots -->
+</krpano>
+
+
+
+
+<krpano version="1.0.8">
+
+	
+	<plugin name="Secretaria"
+		url="Secretaria.png"
+		keep="false"
+		visible="true"
+		enabled="true"
+		handcursor="true"
+		capture="true"
+		children="true"
+		zorder="1"
+		alpha="1.00"
+		blendmode="normal"
+		smoothing="true"
+		align="left"
+		edge="right"
+		x="0" y="0"
+		ox="100" oy="0"
+		rotate="0"
+		width="" height=""
+		scale="1"
+		scale9grid=""
+		crop=""
+		mask=""
+		onloaded=""
+		onover="action(slide_action_1_in);"
+		onhover=""
+		onout="action(slide_action_1_out);"
+		ondown=""
+		onup=""
+		onclick=""
+	/>
+
+
+	<action name="slide_action_1_in">
+		tween(plugin[Secretaria].x,440,distance(500,3),linear);
+	</action>
+
+	<action name="slide_action_1_out">
+		tween(plugin[Secretaria].x,0,distance(500,3),linear);
+	</action>
+	
+</krpano>

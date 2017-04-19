@@ -81,8 +81,14 @@
 			</header> <!-- .extra-header -->
 			<div class="extra-central">
 				<div class="site-central">
-					<?php if (!is_home()) { ?>
-					<div class="bg-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/bg-interna.jpg);">
+					<?php if (!is_home()) { 
+					 if ( has_post_thumbnail() ) { 
+					 	$backgroundImageURL = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+					  } else {
+					  	$backgroundImageURL = get_template_directory_uri().'/img/bg-interna.jpg';
+					  }
+					  ?>
+					<div class="bg-header" style="background-image:url(<?php echo $backgroundImageURL; ?>);">
 						<div class="mask"></div>
 					</div> <!-- bg-header -->
 					<div class="color-bar clearfix">

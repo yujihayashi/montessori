@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for xml compliance -->
+<krpano version="1.0.8.14">
+    <!-- actions to perform while loading -->
+    <events onxmlcomplete="onxmlcompleteaction();"/>
+    <action name="onxmlcompleteaction">
+		firstloadcompleteaction();
+	</action>
+    <events onloadcomplete="onloadcompleteaction();"/>
+    <action name="onloadcompleteaction">
+		if(plugin[data].soundOn==false,stoppanosounds(),playpanosounds());
+	</action>
+    <action name="playpanosounds">
+		playbackgroundsound(none);
+	</action>
+    <action name="stoppanosounds">
+		stopbackgroundsound();
+	</action>
+    <action name="closepanoobjects">
+	</action>
+    <!--************** Panorama *******************************************************************-->
+    <!-- @File="Peteleco7.xml" @PanoName="Hall_de_Entrada" @FilePath="D:/Marcos/Tour_Virtual/Sphere360_Nossa_Empresa/Clientes/Peteleco/Peteleco/Proximo_Diretoria_ninja.jpg" -->
+    <panoview h="0" v="0" fov="90"/>
+    <!-- view parameters -->
+    <view fisheye="0" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.0" fovmax="90" fov="90" hlookat="0" vlookat="0"/>
+    <progress showload="bar(midbottom, 100%, 2, 0, 55, shaded, 0x0a0a0a, 0x4a9fff, 0x4a9fff, 0x9f9f9f, 0, 0x9f9f9f, 0)" showreloads="true" showwait=""/>
+    <autorotate horizon="0" tofov="90" waittime="1" speed="7"/>
+    <!-- preview image -->
+    <preview url="Petelecodata/Peteleco7/preview.jpg" type="CUBESTRIP" striporder="FRBLUD" details="16"/>
+    <!-- the pano itself -->
+    <image type="CUBE" multires="true" tilesize="880" baseindex="0">
+        <level tiledimagewidth="1760" tiledimageheight="1760">
+            <left url="Petelecodata/Peteleco7/3/1/%v_%u.jpg"/>
+            <front url="Petelecodata/Peteleco7/0/1/%v_%u.jpg"/>
+            <right url="Petelecodata/Peteleco7/1/1/%v_%u.jpg"/>
+            <back url="Petelecodata/Peteleco7/2/1/%v_%u.jpg"/>
+            <up url="Petelecodata/Peteleco7/4/1/%v_%u.jpg"/>
+            <down url="Petelecodata/Peteleco7/5/1/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="880" tiledimageheight="880">
+            <left url="Petelecodata/Peteleco7/3/0/%v_%u.jpg"/>
+            <front url="Petelecodata/Peteleco7/0/0/%v_%u.jpg"/>
+            <right url="Petelecodata/Peteleco7/1/0/%v_%u.jpg"/>
+            <back url="Petelecodata/Peteleco7/2/0/%v_%u.jpg"/>
+            <up url="Petelecodata/Peteleco7/4/0/%v_%u.jpg"/>
+            <down url="Petelecodata/Peteleco7/5/0/%v_%u.jpg"/>
+        </level>
+    </image>
+    <!--************** Hotspots and lensflares ****************************************************-->
+    <hotspot name="spot19" hview="0" vview="0" fovview="90" hcenter="-169.164" vcenter="5.43624" onclick="mainloadpano(Peteleco11.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Secretaria);" ath="190.836" atv="5.43624"/>
+    <hotspot name="spot20" hview="0" vview="0" fovview="90" hcenter="102.568" vcenter="4.39739" onclick="mainloadpano(Peteleco15.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Entrada Principal);" ath="102.568" atv="4.39739"/>
+    <hotspot name="spot21" hview="0" vview="0" fovview="90" hcenter="11.4607" vcenter="2.03008" onclick="mainloadpano(Peteleco6.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Ponto de Encontro);" ath="11.4607" atv="2.03008"/>
+    <hotspot name="spot22" hview="2.4" vview="-0.6" fovview="90" hcenter="-110.658" vcenter="4.98371" onclick="mainloadpano(Peteleco16.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Primeiro Ano);" ath="249.342" atv="4.98371"/>
+    <hotspot name="spot23" hview="0" vview="0" fovview="90" hcenter="15.9506" vcenter="0.295082" onclick="mainloadpano(Peteleco9.xml);lookat(get(hview),get(vview),get(fovview));wait(blend);lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));" url="Petelecodata/graphics/spots/spot0.png" onhover="showtext(Agrupada Regular);" ath="15.9506" atv="0.295082"/>
+    <action name="hidepanospotsaction">
+		set(hotspot[spot19].visible, false);
+		set(hotspot[spot20].visible, false);
+		set(hotspot[spot21].visible, false);
+		set(hotspot[spot22].visible, false);
+		set(hotspot[spot23].visible, false);
+	</action>
+    <action name="showpanospotsaction">
+		set(hotspot[spot19].visible, true);
+		set(hotspot[spot20].visible, true);
+		set(hotspot[spot21].visible, true);
+		set(hotspot[spot22].visible, true);
+		set(hotspot[spot23].visible, true);
+	</action>
+    <!-- close all hotspots -->
+</krpano>

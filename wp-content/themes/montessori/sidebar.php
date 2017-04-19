@@ -42,4 +42,16 @@
 				</ul>
 			</li>
 		</ul>
+		<br>
+		<ul>
+			<li>
+		<h2 class="h3"><a href="<?php echo get_site_url(); ?>/tour-virtual" title="Acesse nosso tour virtual">Tour Virtual</a></h2>
+		<p>
+			Você vai descobrir uma estrutura completa com ambientes preparados especialmente para estimular o desenvolvimento de cada criança.
+		</p>
+		<p>
+			<a href="<?php echo get_site_url(); ?>/tour-virtual" title="Acesse nosso tour virtual" class="btn btn-primary">Acesse o tour virtual</a>
+		</p>
+			</li>
+		</ul>
 	</aside>
