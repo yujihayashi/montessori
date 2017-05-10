@@ -59,13 +59,12 @@ FONTS START
   font-family: 'ralewayextrabold', Arial, sans-serif;
   font-weight: normal;
 }
-.destaque .date .day {
+.destaque .date .day,
+.extra-header .navbar-principal {
   font-family: 'ralewaybold', Arial, sans-serif;
   font-weight: normal;
 }
-.lista-noticias .title,
-.extra-header .navbar-principal > li.menu-item-object-page.menu-item-has-children,
-.extra-header .navbar-principal > li.menu-item-object-custom.menu-item-has-children {
+.lista-noticias .title {
   font-family: 'ralewaymedium', Arial, sans-serif;
   font-weight: normal;
 }
@@ -90,6 +89,7 @@ ESTRUTURA START
 }
 .extra-header .navbar-principal {
   font-size: 14px;
+  text-transform: uppercase;
 }
 .extra-header .navbar-principal > li {
   position: relative;
@@ -116,10 +116,6 @@ ESTRUTURA START
   bottom: -7px;
   font-size: 20px;
   margin-right: -6px;
-}
-.extra-header .navbar-principal > li.menu-item-object-page.menu-item-has-children,
-.extra-header .navbar-principal > li.menu-item-object-custom.menu-item-has-children {
-  font-size: 16px;
 }
 .extra-header .navbar-principal > li:hover ul {
   display: block;

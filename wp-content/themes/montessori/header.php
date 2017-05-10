@@ -67,6 +67,7 @@
 											<?php } //if ( get_post_status( get_page_by_title('Matricula online') ) == 'publish') { ?>
 											<li><a href="<?php echo site_url('agenda-kids'); ?>" title="Conheça e baixe o Agenda Kids!"><img src="<?php echo get_template_directory_uri(); ?>/img/agenda-kids.png" alt="Agenda Kids"></a></li>
 										</ul>
+											<?php wp_nav_menu( array( 'theme_location' => 'third', 'menu_class' => 'nav navbar-nav navbar-right navbar-sublinks', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>' ) ); ?>
 									</div> <!-- .line-1 -->
 									<div class="line-2 clearfix">
 										<div class="collapse navbar-collapse navbar-primary">

@@ -62,8 +62,9 @@ function projeto_paginacao( $query=null ) {
 add_theme_support( 'customize-selective-refresh-widgets' );
 // This theme uses wp_nav_menu() in two locations.
 register_nav_menus( array(
-    'primary'   => __( 'Top primary menu', 'twentyfourteen' ),
-    'secondary' => __( 'Secondary menu in left sidebar', 'twentyfourteen' ),
+    'primary'   => __( 'Menu principal do topo', 'twentyfourteen' ),
+    'secondary' => __( 'Menu do rodapé', 'twentyfourteen' ),
+    'third' => __( 'Menu secundário do topo', 'twentyfourteen' ),
     ) );
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
