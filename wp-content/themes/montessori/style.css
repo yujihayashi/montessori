@@ -90,9 +90,13 @@ ESTRUTURA START
 .extra-header .navbar-principal {
   font-size: 14px;
   text-transform: uppercase;
+  width: 100%;
+  text-align: center;
 }
 .extra-header .navbar-principal > li {
   position: relative;
+  float: none;
+  display: inline-block;
 }
 .extra-header .navbar-principal > li ul {
   display: none;
