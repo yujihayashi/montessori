@@ -52,6 +52,8 @@
 											<span class="icon-bar"></span>
 										</button>
 										<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/mundo-montessori.png" alt="Logotipo Mundo Montessori"></a>
+										<a href="<?php echo site_url('peteleco/o-mundo-do-peteleco'); ?>" class="logo-peteleco"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-peteleco-menor.png" alt="Logotipo Peteleco"></a>
+										<a href="<?php echo site_url('cemp/o-cemp'); ?>" class="logo-cemp"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-cemp-menor.png" alt="Logotipo CEMP"></a>
 									</div> <!-- navbar-header -->
 								</div> <!-- col-md-2 -->
 								<div class="col-md-10 navbar-right">
