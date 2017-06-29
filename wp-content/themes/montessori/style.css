@@ -87,6 +87,30 @@ ESTRUTURA START
   right: 0;
   z-index: 2;
 }
+.extra-header .navbar-brand {
+  height: auto;
+  display: block;
+  margin-left: 0 !important;
+  float: none;
+}
+.extra-header .navbar-header {
+  text-align: center;
+}
+.extra-header .navbar-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.extra-header .navbar > .container {
+  position: relative;
+}
+.extra-header .logo-peteleco,
+.extra-header .logo-cemp {
+  display: inline-block;
+}
+.extra-header .logo-peteleco + .logo-cemp {
+  margin-left: 10px;
+}
 .extra-header .navbar-principal {
   font-size: 14px;
   text-transform: uppercase;
@@ -645,11 +669,30 @@ JQUERY UI END
   .bg-header .mask {
     display: none;
   }
-  .navbar-brand {
-    height: auto;
-  }
   .extra-header {
     position: relative;
+  }
+  .extra-header .navbar-left {
+    position: relative;
+  }
+  .extra-header .navbar-brand {
+    display: inline-block;
+    height: auto;
+  }
+  .extra-header .navbar-brand,
+  .extra-header .logo-cemp,
+  .extra-header .logo-peteleco {
+    vertical-align: top;
+  }
+  .extra-header .logo-cemp,
+  .extra-header .logo-peteleco {
+    padding-top: 15px;
+  }
+  .extra-header .navbar-header {
+    text-align: left;
+  }
+  .extra-header .navbar-principal > li {
+    display: block;
   }
   .extra-header .navbar-principal > li ul {
     position: relative;
@@ -697,6 +740,10 @@ JQUERY UI END
   }
   .navbar-brand img {
     max-height: 40px;
+  }
+  .extra-header .logo-peteleco img,
+  .extra-header .logo-cemp img {
+    max-width: 45px;
   }
   .extra-header .navbar-principal {
     font-size: 12px;

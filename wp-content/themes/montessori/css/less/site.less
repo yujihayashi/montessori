@@ -59,6 +59,16 @@ ESTRUTURA START
 .site-geral {position: relative;}
 .extra-header {
     position: absolute;left: 0;top: 0;right: 0;z-index: 2;
+    .navbar-brand {height: auto;display: block;margin-left: 0 !important;float: none;}
+    .navbar-header {text-align: center;}
+    .navbar-left {position: absolute;left: 0;top: 0;}
+    .navbar {
+        > .container {position: relative;}
+    }
+    .logo-peteleco, .logo-cemp {
+        display: inline-block;
+    }
+    .logo-peteleco + .logo-cemp {margin-left: 10px;}
     .navbar-principal {
         font-size: 14px;text-transform: uppercase;width: 100%;text-align: center;
         > li {
@@ -338,7 +348,7 @@ JQUERY UI END
 
 }
 @media (max-width: 981px) {
-    
+
 }
 @media (min-width: 768px) {
     .navbar-collapse {padding-left: 0;padding-right: 0;}
@@ -348,11 +358,16 @@ JQUERY UI END
 }
 @media (max-width: 767px) {
     .bg-header .mask {display: none;}
-    .navbar-brand {height: auto;}
     .extra-header {
         position: relative;
+        .navbar-left {position: relative;}
+        .navbar-brand {display: inline-block;height: auto;}
+        .navbar-brand, .logo-cemp, .logo-peteleco {vertical-align: top;}
+        .logo-cemp, .logo-peteleco {padding-top:15px;}
+        .navbar-header {text-align: left;}
         .navbar-principal {
             > li {
+                display: block;
                 ul {position: relative;}
             }
         }
@@ -393,6 +408,9 @@ JQUERY UI END
     .navbar-brand img {max-height: 40px;}
 
     .extra-header {
+        .logo-peteleco, .logo-cemp {
+            img {max-width: 45px;}
+        }
         .navbar-principal {
             font-size: 12px;
             > li {

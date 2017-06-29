@@ -56,7 +56,7 @@
 										<a href="<?php echo site_url('cemp/o-cemp'); ?>" class="logo-cemp"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-cemp-menor.png" alt="Logotipo CEMP"></a>
 									</div> <!-- navbar-header -->
 								</div> <!-- col-md-2 -->
-								<div class="col-md-10 navbar-right">
+								<div class="col-md-12 col-sm-12 navbar-right">
 									<div class="line-1 clearfix">								
 										<ul class="nav navbar-nav navbar-right navbar-social">
 											<li><a href="https://www.facebook.com/escolapeteleco/" title="Acesse nosso Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
